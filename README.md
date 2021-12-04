@@ -43,8 +43,8 @@ CPP Piscine is a project from 42 school to help students learn C++ and object-or
 
 There are nine modules and the topics covered by each module are:
 
-| Module | Topics Covered |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
+|     Module    |                                                 Topics Covered                                                |
+| --------------| ------------------------------------------------------------------------------------------------------------- |
 | CPP Module 00 | Namespace, class, member functions, stdio stream, initialization lists, static, const, and lots of basic stuf |
 | CPP Module 01 | Memory allocation, references, pointers to members, switch | |
 | CPP Module 02 | Ad-hoc polymorphism, operators overload and orthodox canonical classes |
