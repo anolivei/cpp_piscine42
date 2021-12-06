@@ -27,7 +27,7 @@
 
 <p align="center">
   <a href="about">About</a> &#xa0; | &#xa0; 
-  <a href="features">Features</a> &#xa0; | &#xa0;
+  <a href="features">Links</a> &#xa0; | &#xa0;
   <a href="technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="starting">Starting</a> &#xa0; | &#xa0;
@@ -55,9 +55,11 @@ There are nine modules and the topics covered by each module are:
 | CPP Module 07 | C++ Templates |
 | CPP Module 08 | Templated containers, iterators, algorithms |
 
-## Features ##
-
-TODO
+## Links ##
+Here are some useful links:
+- [CPP Wiki](https://github.com/qingqingqingli/CPP/wiki)
+- [To help: Ex03 M03 - Inheritance — Multiple and Virtual Inheritance - What is the “dreaded diamond"](https://isocpp.org/wiki/faq/multiple-inheritance)
+- [To help: Ex02 M07](https://www.youtube.com/watch?v=TzB5ZeKQIHM)
 
 ## Technologies ##
 
@@ -83,6 +85,8 @@ $ cd cpp_piscine42
 ## License ##
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+
+The [template to initialize files](https://github.com/anolivei/cpp_piscine42/template_to_initialize_files/) was made by [pcunha](https://github.com/pcc19) and [nasimon-](https://github.com/nayran)
 
 
 &#xa0;
