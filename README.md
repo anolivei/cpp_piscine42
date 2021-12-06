@@ -86,7 +86,7 @@ $ cd cpp_piscine42
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-The [template to initialize files](https://github.com/anolivei/cpp_piscine42/template_to_initialize_files/) was made by [pcunha](https://github.com/pcc19) and [nasimon-](https://github.com/nayran)
+The [template to initialize files](https://github.com/anolivei/cpp_piscine42/tree/main/template_to_initialize_files) was made by [pcunha](https://github.com/pcc19) and [nasimon-](https://github.com/nayran)
 
 
 &#xa0;
