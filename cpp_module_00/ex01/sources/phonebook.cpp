@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/06 01:04:56 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/06 01:10:21 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,14 @@ int	main(void)
 	i = 0;
 	while (command != "EXIT" && command != "exit")
 	{
-		if ((command == "ADD" || command == "add") && i < 8)
+		if (command == "ADD" || command == "add")
 		{
+			if (i == 8)
+				i = 0;
 			contact[i] = add_new_contact();
 			std::cout << contact[i].get_first_name() << std::endl;
 			i++;
-		}
+		} 
 		std::cout << i << std::endl;
 		getline(std::cin, command);
 	}
