@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contacts.class.hpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/05 22:22:46 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/06 00:03:54 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CONTACTS_CLASS_HPP
+# define CONTACTS_CLASS_HPP
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+class Contacts
+{
+	public:
+		std::string	get_first_name(void) const;
+		void		set_first_name(std::string first_name);
+
+	private:
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
+};
+
+#endif
