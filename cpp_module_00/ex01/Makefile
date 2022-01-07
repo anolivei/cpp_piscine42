@@ -6,42 +6,41 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/05 21:52:35 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/06 01:36:31 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/07 00:58:06 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
-SRCSDIR		= sources/
-OBJSDIR		= .objs/
+SRC_DIR		= sources/
+OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
-RM			= /bin/rm -rf
+SRC		=	$(SRC_DIR)phonebook.cpp \
+			$(SRC_DIR)Contacts.class.cpp
 
-SRCS		=	$(SRCSDIR)phonebook.cpp \
-				$(SRCSDIR)Contacts.class.cpp
-
-OBJS	= $(SRCS:$(SRCSDIR)%=$(OBJSDIR)%.o)
+OBJ	= $(SRC:$(SRC_DIR)%=$(OBJ_DIR)%.o)
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
+RM			= /bin/rm -rf
 
 all: $(NAME)
 
-$(OBJSDIR):
+$(OBJ_DIR):
 	@mkdir $@
 
-$(OBJS): | $(OBJSDIR)
+$(OBJ): | $(OBJ_DIR)
 
-$(OBJS): $(OBJSDIR)%.o: $(SRCSDIR)%
+$(OBJ): $(OBJ_DIR)%.o: $(SRC_DIR)%
 	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
 	@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJ)
 	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
 	@$(CC) -o $@ $^
 
 clean:
-	@$(RM) $(OBJSDIR)
+	@$(RM) $(OBJ_DIR)
 	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
 
 fclean: clean
