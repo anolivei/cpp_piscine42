@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/06 22:15:32 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/08 02:44:38 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class Contacts
 {
 	public:
+
 		std::string	get_first_name(void) const;
 		void		set_first_name(std::string first_name);
 
@@ -42,5 +43,24 @@ class Contacts
 		std::string	_phone_number;
 		std::string	_darkest_secret;
 };
+
+/*
+** phonebook.cpp
+*/
+std::string	print_welcome_message(std::string command);
+
+/*
+** add.cpp
+*/
+Contacts	add_new_contact(void);
+
+/*
+** search.cpp
+*/
+void		show_all_contacts(Contacts contact[8], int num_contacts);
+void		choose_contact(Contacts contact[8], int num_contacts);
+void		print_contacts(int id, std::string first_name,
+				std::string last_name, std::string nickname);
+std::string	trim(std::string info);
 
 #endif

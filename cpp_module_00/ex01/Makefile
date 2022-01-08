@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/05 21:52:35 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/07 00:58:06 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/08 02:36:09 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
 SRC		=	$(SRC_DIR)phonebook.cpp \
-			$(SRC_DIR)Contacts.class.cpp
+			$(SRC_DIR)Contacts.class.cpp \
+			$(SRC_DIR)add.cpp \
+			$(SRC_DIR)search.cpp
 
 OBJ	= $(SRC:$(SRC_DIR)%=$(OBJ_DIR)%.o)
 
