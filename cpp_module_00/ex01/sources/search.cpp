@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 02:36:41 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/08 02:38:28 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/08 02:53:13 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	show_all_contacts(Contacts contact[8], int num_contacts)
 
 void	choose_contact(Contacts contact[8], int num_contacts)
 {
-	int			id;
+	int	id;
 
 	std::cout << "Choose a contact id to display: ";
 	while (!(std::cin >> id) || id < 1 || id > num_contacts)
@@ -48,7 +48,7 @@ void	choose_contact(Contacts contact[8], int num_contacts)
 		std::cout << "Phone number: " << contact[id].get_phone_number()
 			<< std::endl;
 		std::cout << "Darkest secret: " << contact[id].get_darkest_secret()
-			<< std::endl;		
+			<< std::endl;
 	}
 	std::cin.clear();
 	std::cin.ignore(10000, '\n');

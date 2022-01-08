@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/08 02:47:34 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/08 02:55:48 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,13 @@ int	main(void)
 		}
 		else if (command == "SEARCH" || command == "search")
 		{
-			show_all_contacts(contact, num_contacts);
-			choose_contact(contact, num_contacts);
+			if (num_contacts > 0)
+			{
+				show_all_contacts(contact, num_contacts);
+				choose_contact(contact, num_contacts);
+			}
+			else
+				std::cout << "Empty phonebook" << std::endl;
 		}
 		else
 			std::cout << "Invalid command" << std::endl;
