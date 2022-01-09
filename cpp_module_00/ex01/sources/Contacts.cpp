@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contacts.class.cpp                                 :+:      :+:    :+:   */
+/*   Contacts.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:48:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/08 02:51:56 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/08 22:09:28 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contacts.class.hpp"
+#include "Contacts.hpp"
 
 std::string Contacts::get_first_name(void) const
 {

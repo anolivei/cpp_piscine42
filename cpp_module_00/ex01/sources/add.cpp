@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 02:34:57 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/08 02:35:24 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/08 22:09:22 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contacts.class.hpp"
+#include "Contacts.hpp"
 
 Contacts	add_new_contact(void)
 {
