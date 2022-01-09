@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/08 03:19:05 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/08 21:35:03 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/08 21:49:51 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,10 @@ fclean: clean
 diff: $(NAME)
 	@./account > new_log.txt
 	@cp 19920104_091532.log old_log.txt
-	@bash test.sh
-	$(RM) old_log new_log new_log.txt old_log.txt
+	@cat old_log.txt | cut -d ' ' -f2 > old_log
+	@cat new_log.txt | cut -d ' ' -f2 > new_log
+	@diff old_log new_log > diff
+	@$(RM) old_log new_log new_log.txt old_log.txt
 
 re: fclean all
 
