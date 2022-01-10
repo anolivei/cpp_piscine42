@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/10 20:14:45 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/10 20:47:32 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,30 @@ int	main(void)
 				std::cout << "Empty phonebook" << std::endl;
 		}
 		else
-			std::cout << "Invalid command" << std::endl;
-		std::cout << "Type your command: ";
+			std::cout 
+				<< BOLD_RED << "Invalid command" << std::endl << RESET;
+		std::cout
+			<< LILAC << "Type your command: " << RESET;
 		getline(std::cin, command);
 	}
-	std::cout << "Bye" << std::endl;
+	std::cout
+		<< PURPLE << "Bye! =)" << std::endl << RESET;
 	return (0);
 }
 
 std::string	print_welcome_message(std::string command)
 {
-	std::cout << "Welcome to the 42 Phonebook" << std::endl;
-	std::cout << "Type:" << std::endl 
+	std::cout 
+			<< PINK << "Welcome to the 42 Phonebook" << RESET << std::endl;
+	std::cout
+			<< V_CYAN
+			<< "Type:" << std::endl 
 			<< "ADD to add a new contact" << std::endl 
 			<< "SEARCH to search a contact" << std::endl
-			<< "EXIT to exit" << std::endl;
-	std::cout << "Type your command: ";
+			<< "EXIT to exit" << std::endl
+			<< RESET;
+	std::cout
+		<< LILAC << "Type your command: " << RESET;
 	getline(std::cin, command);
 	return (command);
 }

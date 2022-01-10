@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:59:40 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/10 20:14:15 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/10 20:46:33 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 #include <string>
 #include <iomanip>
 #include "Contacts.hpp"
+
+#define RESET		"\e[0m"
+#define PINK		"\e[0;38;5;199m"
+#define LILAC		"\e[0;38;5;13m"
+#define PURPLE		"\e[0;38;5;93m"
+#define BOLD_RED	"\e[1;31m"
+#define BLUE		"\e[0;34m"
+#define V_CYAN		"\e[0;38;5;44m"
+
 
 class Phonebook
 {
@@ -29,7 +38,7 @@ class Phonebook
 };
 
 /*
-** phonebook.cpp
+** main.cpp
 */
 int			main(void);
 std::string	print_welcome_message(std::string command);
