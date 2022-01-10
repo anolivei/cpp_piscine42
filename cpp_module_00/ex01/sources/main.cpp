@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/08 22:09:33 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/10 20:14:45 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contacts.hpp"
+#include "Phonebook.hpp"
 
 int	main(void)
 {
-	Contacts	contact[8];
+	Phonebook	phonebook;
 	std::string	command;
 	int			i;
 	int			num_contacts;
@@ -28,7 +28,7 @@ int	main(void)
 		{
 			if (i == 8)
 				i = 0;
-			contact[i] = add_new_contact();
+			phonebook.contact[i] = add_new_contact();
 			i++;
 			if (num_contacts < 8)
 				num_contacts++;
@@ -37,8 +37,8 @@ int	main(void)
 		{
 			if (num_contacts > 0)
 			{
-				show_all_contacts(contact, num_contacts);
-				choose_contact(contact, num_contacts);
+				show_all_contacts(phonebook.contact, num_contacts);
+				choose_contact(phonebook.contact, num_contacts);
 			}
 			else
 				std::cout << "Empty phonebook" << std::endl;
