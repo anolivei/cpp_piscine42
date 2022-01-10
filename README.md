@@ -57,6 +57,7 @@ There are nine modules and the topics covered by each module are:
 
 ## Links ##
 Here are some useful links:
+- [Notion](https://www.notion.so/CPP-Piscine-e28af1f755bf4af6b955cb445b4ad6a3)
 - [CPP Wiki](https://github.com/qingqingqingli/CPP/wiki)
 - [To help: Ex03 M03 - Inheritance — Multiple and Virtual Inheritance - What is the “dreaded diamond"](https://isocpp.org/wiki/faq/multiple-inheritance)
 - [To help: Ex02 M07](https://www.youtube.com/watch?v=TzB5ZeKQIHM)
@@ -87,6 +88,12 @@ $ cd cpp_piscine42
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 The [template to initialize files](https://github.com/anolivei/cpp_piscine42/tree/main/template_to_initialize_files) was made by [pcunha](https://github.com/pcc19) and [nasimon-](https://github.com/nayran)
+
+Usage:
+
+```bash
+bash template.sh path_to_your_class class_name
+```
 
 
 &#xa0;
