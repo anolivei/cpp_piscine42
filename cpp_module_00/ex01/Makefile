@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/05 21:52:35 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/10 20:18:26 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/10 21:02:37 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ SRC_DIR		= sources/
 OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
-SRC		=	$(SRC_DIR)Phonebook.cpp \
-			$(SRC_DIR)Contacts.cpp \
+SRC		=	$(SRC_DIR)ClassPhonebook.cpp \
+			$(SRC_DIR)ClassContacts.cpp \
 			$(SRC_DIR)main.cpp \
 			$(SRC_DIR)add.cpp \
 			$(SRC_DIR)search.cpp

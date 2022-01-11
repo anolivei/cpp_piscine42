@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   ClassPhonebook.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:59:40 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/10 20:46:33 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/10 21:05:09 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CLASSPHONEBOOK_HPP
+# define CLASSPHONEBOOK_HPP
 
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include "Contacts.hpp"
+#include "ClassContacts.hpp"
 
 #define RESET		"\e[0m"
 #define PINK		"\e[0;38;5;199m"
@@ -25,7 +25,6 @@
 #define BOLD_RED	"\e[1;31m"
 #define BLUE		"\e[0;34m"
 #define V_CYAN		"\e[0;38;5;44m"
-
 
 class Phonebook
 {

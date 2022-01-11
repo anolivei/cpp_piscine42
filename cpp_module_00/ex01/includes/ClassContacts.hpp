@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contacts.hpp                                       :+:      :+:    :+:   */
+/*   ClassContacts.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/10 20:08:09 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/10 21:05:57 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACTS_HPP
-# define CONTACTS_HPP
+#ifndef CLASSCONTACTS_HPP
+# define CLASSCONTACTS_HPP
 
 #include <string>
 
