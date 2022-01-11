@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 22:22:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/10 21:05:57 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/11 01:46:06 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Contacts
 {
 	public:
 
-		Contacts();
-		~Contacts();
+		Contacts(void);
+		~Contacts(void);
 
 		std::string	get_first_name(void) const;
 		void		set_first_name(std::string first_name);

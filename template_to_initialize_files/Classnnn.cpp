@@ -8,7 +8,7 @@ nnn::nnn(void)
 
 nnn::~nnn(void)
 {
-	std::cout << "Destructor" << std:endl;
+	std::cout << "Destructor" << std::endl;
 }
 
 nnn::nnn(const nnn &obj)

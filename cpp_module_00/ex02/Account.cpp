@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 03:21:07 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/08 21:10:38 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/10 23:45:48 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,9 @@ void	Account::_displayTimestamp( void )
 		<< std::setfill('0') << std::setw(2) << t->tm_mon + 1
 		<< std::setfill('0') << std::setw(2) << t->tm_mday
 		<< '_'
-		<< t->tm_hour << t->tm_min << t->tm_sec
+		<< std::setfill('0') << std::setw(2) << t->tm_hour
+		<< std::setfill('0') << std::setw(2) << t->tm_min
+		<< std::setfill('0') << std::setw(2) << t->tm_sec
 		<< "] ";
 }
 
