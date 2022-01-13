@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 00:34:10 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/12 22:49:46 by anolivei         ###   ########.fr       */
+/*   Created: 2022/01/13 15:42:10 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/13 15:53:29 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Zombie.hpp"
 
 #include "Zombie.hpp"
 
