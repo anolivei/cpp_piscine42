@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 00:24:28 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/16 18:42:00 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/16 18:51:32 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,13 @@ void	Karen::complain(std::string level)
 		case 4:
 			break ;
 		case 0:
-			(this->*ft_ptr[i])();
-			i++;
+			(this->*ft_ptr[0])();
 		case 1:
-			(this->*ft_ptr[i])();
-			i++;
+			(this->*ft_ptr[1])();
 		case 2:
-			(this->*ft_ptr[i])();
-			i++;
+			(this->*ft_ptr[2])();
 		default:
-			(this->*ft_ptr[i])();
+			(this->*ft_ptr[3])();
 			break ;
 	}
 }
