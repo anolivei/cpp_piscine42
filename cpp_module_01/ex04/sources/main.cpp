@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:11:56 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 22:05:23 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 23:07:07 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replace.hpp"
+#include "../includes/Replace.hpp"
 
 void	print_error_message(void)
 {
@@ -34,8 +34,8 @@ int	main(int argc, char **argv)
 	Replace	replace(argv[1], argv[2], argv[3]);
 	if (!replace.open_file(ifs))
 		return (1);
-	replace.read_file(ifs);
-	replace.write_file(ofs);
+	replace.set_new_filename(argv[1]);
+	replace.create_new_file(ifs, ofs);
 	ifs.close();
 	ofs.close();
 	return (0);

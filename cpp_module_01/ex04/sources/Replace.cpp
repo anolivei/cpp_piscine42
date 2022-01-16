@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:06:45 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 22:07:05 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 23:08:04 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replace.hpp"
+#include "../includes/Replace.hpp"
 
 /*
 ** constructor and destructor
@@ -19,7 +19,6 @@
 Replace::Replace(char* filename, char* string1, char* string2)
 {
 	set_filename(filename);
-	set_new_filename(filename);
 	set_string1(string1);
 	set_string2(string2);
 }
@@ -53,16 +52,6 @@ void	Replace::set_content(std::string content)
 	this->_content = content;
 }
 
-int	Replace::get_len(void) const
-{
-	return (this->_len);
-}
-
-void	Replace::set_len(int len)
-{
-	this->_len = len;
-}
-
 std::string	Replace::get_new_filename(void) const
 {
 	return (this->_new_filename);
@@ -70,11 +59,15 @@ std::string	Replace::get_new_filename(void) const
 
 void	Replace::set_new_filename(char* filename)
 {
-	char	new_filename[std::strlen(filename)];
+	char	new_filename[std::strlen(filename) + 1];
 	size_t	i;
 
-	for (i = 0; i < std::strlen(filename); i++)
+	i = 0;
+	while (i < std::strlen(filename))
+	{
 		new_filename[i] = toupper(filename[i]);
+		i++;
+	}
 	new_filename[i] = '\0';
 	this->_new_filename = new_filename;
 	this->_new_filename.append(".replace");
@@ -120,36 +113,28 @@ bool	Replace::open_file(std::ifstream& ifs)
 	return (true);
 }
 
-void	Replace::read_file(std::ifstream& ifs)
+void	Replace::create_new_file(std::ifstream& ifs, std::ofstream& ofs)
 {
-	char *buffer;
+	std::string	buffer;
 
-	ifs.seekg(0, ifs.end);
-	set_len(ifs.tellg());
-	buffer = new char[get_len()];
-	ifs.seekg(0);
-	ifs.read(buffer, get_len());
-	set_content(buffer);
-	delete [] buffer;
-}
-
-void	Replace::write_file(std::ofstream& ofs)
-{
 	ofs.open(get_new_filename().c_str());
-	replace();
-	ofs.write(get_content().c_str(), get_len());
+	while (std::getline(ifs, buffer))
+	{
+		set_content(buffer);
+		replace();
+		ofs << get_content() << std::endl;
+	}
 }
 
 void	Replace::replace(void)
 {
-	for (size_t i = 0; i != std::string::npos;
-			i = get_content().find(get_string1(), i + 1))
+	size_t	i;
+
+	i = get_content().find(get_string1());
+	while (i != std::string::npos)
 	{
-		if (i != std::string::npos && i != 0)
-		{
-			set_content(get_content().erase(i, get_string1().length()));
-			set_content(get_content().insert(i, get_string2()));
-		}
+		set_content(get_content().erase(i, get_string1().size()));
+		set_content(get_content().insert(i, get_string2()));
+		i = get_content().find(get_string1());
 	}
-	set_len(get_content().length());
 }

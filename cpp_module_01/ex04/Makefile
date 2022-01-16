@@ -6,49 +6,40 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:58:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/15 22:13:50 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/15 23:22:46 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= replace
-SRC_DIR		= sources/
-OBJ_DIR		= .objs/
-INCLUDES	= includes/
+NAME = replace
 
-SRC		=	$(SRC_DIR)Replace.cpp \
-			$(SRC_DIR)main.cpp
+OBJS =	Replace.o \
+		main.o
 
-OBJ	= $(SRC:$(SRC_DIR)%=$(OBJ_DIR)%.o)
+SRC =	./sources/Replace.cpp \
+		./sources/main.cpp
 
-CC			= clang++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
-RM			= /bin/rm -rf
+CC	= clang++
 
-all: $(NAME)
+RM	= rm -rf
 
-$(OBJ_DIR):
-	@mkdir $@
+CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -g -fsanitize=address
 
-$(OBJ): | $(OBJ_DIR)
+$(NAME):	$(SRC) $(OBJ)
+			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
+			@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-$(OBJ): $(OBJ_DIR)%.o: $(SRC_DIR)%
-	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
-	@$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
-
-$(NAME): $(OBJ)
-	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
-	@$(CC) -o $@ $^
+all:	$(NAME)
 
 clean:
-	@$(RM) $(OBJ_DIR)
-	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
-	@$(RM) *.replace
-	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving .replace files\033[0m"
+		@$(RM) $(OBJS)
+		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
+		@$(RM) *.replace
+		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving .replace files\033[0m"
 
-fclean: clean
-	@$(RM) $(NAME)
-	@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving $(NAME)\033[0m"
+fclean:	clean
+		@$(RM) $(NAME)
+		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving $(NAME)\033[0m"
 
-re: fclean all
+re:	fclean all
 
-.PHONY: all clean fclean re
+PHONY:	all clean fclean re
