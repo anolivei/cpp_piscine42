@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 21:30:37 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/14 01:27:15 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/16 15:22:23 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class	HumanA
 		void		set_name(std::string name);
 
 		Weapon		get_weapon(void) const;
-		void		set_weapon(Weapon& weapon);
 
 		void		attack(void);
 

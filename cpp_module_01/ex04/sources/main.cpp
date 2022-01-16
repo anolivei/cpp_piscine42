@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:11:56 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 23:27:42 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/16 15:23:38 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	std::ifstream	ifs;
 	std::ofstream	ofs;
 
-	if (argc != 4)
+	if (argc != 4 || !strlen(argv[2]) || !strlen(argv[3]))
 	{
 		print_error_message();
 		return (1);
