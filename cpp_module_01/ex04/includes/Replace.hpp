@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:06:42 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 21:11:03 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 22:15:07 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 #define REPLACE_HPP
 
 #include <iostream>
-#include <iomanip>
 #include <fstream>
-#include <string>
-#include <cstring> // to strlen
+#include <cstring>
 
 # define RED	"\e[0;31m"
 # define RESET	"\e[0m"

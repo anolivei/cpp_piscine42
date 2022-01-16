@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:06:45 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 21:38:42 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 22:07:05 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,11 @@ std::string	Replace::get_new_filename(void) const
 void	Replace::set_new_filename(char* filename)
 {
 	char	new_filename[std::strlen(filename)];
+	size_t	i;
 
-	for (size_t i = 0; i < std::strlen(filename); i++)
+	for (i = 0; i < std::strlen(filename); i++)
 		new_filename[i] = toupper(filename[i]);
+	new_filename[i] = '\0';
 	this->_new_filename = new_filename;
 	this->_new_filename.append(".replace");
 }
@@ -128,6 +130,7 @@ void	Replace::read_file(std::ifstream& ifs)
 	ifs.seekg(0);
 	ifs.read(buffer, get_len());
 	set_content(buffer);
+	delete [] buffer;
 }
 
 void	Replace::write_file(std::ofstream& ofs)
@@ -141,10 +144,12 @@ void	Replace::replace(void)
 {
 	for (size_t i = 0; i != std::string::npos;
 			i = get_content().find(get_string1(), i + 1))
+	{
 		if (i != std::string::npos && i != 0)
 		{
 			set_content(get_content().erase(i, get_string1().length()));
 			set_content(get_content().insert(i, get_string2()));
 		}
+	}
 	set_len(get_content().length());
 }
