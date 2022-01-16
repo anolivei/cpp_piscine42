@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 00:24:28 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/16 02:59:30 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/16 02:58:29 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,25 @@ void	Karen::complain(std::string level)
 		"ERROR",
 	};
 	int i = 0;
-	while(levels[i] != level)
+	while (levels[i] != level && i < 4)
 		i++;
-	(this->*ft_ptr[i])();
+	switch (i)
+	{
+		case 4:
+			break ;
+		case 0:
+			(this->*ft_ptr[i])();
+			i++;
+		case 1:
+			(this->*ft_ptr[i])();
+			i++;
+		case 2:
+			(this->*ft_ptr[i])();
+			i++;
+		default:
+			(this->*ft_ptr[i])();
+			break ;
+	}
 }
 
 void	Karen::debug(void)
