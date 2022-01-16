@@ -6,11 +6,13 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/14 13:58:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/15 23:22:46 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/15 23:27:30 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
+
+INCLUDES	= includes/
 
 OBJS =	Replace.o \
 		main.o
@@ -26,7 +28,7 @@ CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -g -fsanitize=address
 
 $(NAME):	$(SRC) $(OBJ)
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
-			@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+			@$(CC) $(CFLAGS) $(SRC) -o $(NAME) -I $(INCLUDES)
 
 all:	$(NAME)
 

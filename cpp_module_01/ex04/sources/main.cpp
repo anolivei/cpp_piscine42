@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 14:11:56 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 23:07:07 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 23:27:42 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Replace.hpp"
+#include "Replace.hpp"
 
 void	print_error_message(void)
 {

@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:06:45 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 23:08:04 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 23:27:51 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Replace.hpp"
+#include "Replace.hpp"
 
 /*
 ** constructor and destructor
