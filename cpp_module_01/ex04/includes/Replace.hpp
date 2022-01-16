@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 16:06:42 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/15 02:42:23 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/15 21:11:03 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #define REPLACE_HPP
 
 #include <iostream>
-//#include <fstream>
-//#include <string>
+#include <iomanip>
+#include <fstream>
+#include <string>
 #include <cstring> // to strlen
 
 # define RED	"\e[0;31m"
@@ -27,8 +28,14 @@ class Replace
 		Replace(char* filename, char* string1, char* string2);
 		~Replace();
 
-		std::string	get_filename(void) const;
+		const char*	get_filename(void) const;
 		void		set_filename(char* filename);
+
+		std::string	get_content(void) const;
+		void		set_content(std::string content);
+
+		int			get_len(void) const;
+		void		set_len(int file_len);
 
 		std::string	get_new_filename(void) const;
 		void		set_new_filename(char* filename);
@@ -39,11 +46,23 @@ class Replace
 		std::string	get_string2(void) const;
 		void		set_string2(char* string2);
 
+		bool		open_file(std::ifstream& ifs);
+		void		read_file(std::ifstream& ifs);
+		void		write_file(std::ofstream& ofs);
+
+		void		replace(void);
+
 	private:
-		std::string	_filename;
-		std::string _new_filename;
+		const char*	_filename;
+		std::string	_content;
+		int			_len;
+
+		std::string	_new_filename;
+
 		std::string	_string1;
 		std::string	_string2;
 };
+
+void	print_error_message(void);
 
 #endif
