@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 19:02:04 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/16 19:06:21 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/20 15:59:36 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME = fixed
 
 INCLUDES	= includes/
 
-OBJS =	Filter.o \
+OBJS =	Fixed.o \
 		main.o
 
-SRC =	./sources/Filter.cpp \
+SRC =	./sources/Fixed.cpp \
 		./sources/main.cpp
 
 CC	= clang++

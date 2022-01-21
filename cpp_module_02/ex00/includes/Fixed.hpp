@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/17 20:14:01 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:50:22 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@
 class Fixed
 {
 	public:
-		Fixed(void);
-		Fixed(Fixed const & bla);
-		~Fixed(void);
-		int		getRawBits(void);
-		void	setRawBits(int const raw);
+		Fixed(void); // constructor
+		Fixed(const Fixed& copy); // copy constructor
+		~Fixed(void); // destructor
+
+		Fixed& operator=(const Fixed& copy);
+
+		int		get_raw_bits(void) const;
+		void	set_raw_bits(int const raw);
 
 	private:
-		int					_fixed_b;
-		static const int	_fixed_w;
-
+		int					_raw_bits;
+		static const int	_fractional_bits;
 };
 
 #endif
