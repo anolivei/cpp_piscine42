@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:11 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 15:14:50 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:56:49 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Fixed_01.hpp"
 #include <iostream>
 
 Fixed::Fixed(void)
@@ -31,6 +31,18 @@ Fixed::Fixed(const Fixed& copy)
 	return ;
 }
 
+Fixed::Fixed(const int num)
+{
+	std::cout
+		<< "Copy constructor called"
+		<< std::endl;
+}
+
+Fixed::Fixed(const float num)
+{
+	
+}
+
 Fixed::~Fixed(void)
 {
 	std::cout
@@ -47,6 +59,11 @@ Fixed& Fixed::operator=(const Fixed& copy)
 	if (this != &copy)
 		this->_raw_bits = copy.getRawBits();
 	return (*this);
+}
+std::ostream & operator<<(std::ostream& o, const Fixed& fixed)
+{
+	o << fixed.getRawBits();
+	return o;
 }
 
 int Fixed::getRawBits(void) const

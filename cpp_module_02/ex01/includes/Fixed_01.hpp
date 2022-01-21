@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Fixed_01.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 15:15:02 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:59:16 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ class Fixed
 	public:
 		Fixed(void); // default constructor
 		Fixed(const Fixed& copy); // copy constructor
+		Fixed(const int num); // int contructor
+		Fixed(const float num); // float constructor
 		~Fixed(void); // destructor
 
 		Fixed& operator=(const Fixed& copy); //copy assignment operator overload
@@ -25,9 +27,14 @@ class Fixed
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 
+		float toFloat( void ) const;
+		int toInt( void ) const;
+
 	private:
 		int					_raw_bits;
 		static const int	_fractional_bits;
 };
+
+std::ostream& operator<<(std::ostream& o, const Fixed& fixed);
 
 #endif
