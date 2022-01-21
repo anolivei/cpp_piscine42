@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/20 16:50:22 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/21 14:12:35 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Fixed
 {
 	public:
-		Fixed(void); // constructor
+		Fixed(void); // default constructor
 		Fixed(const Fixed& copy); // copy constructor
 		~Fixed(void); // destructor
 
-		Fixed& operator=(const Fixed& copy);
+		Fixed& operator=(const Fixed& copy); //copy assignment operator overload
 
-		int		get_raw_bits(void) const;
-		void	set_raw_bits(int const raw);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 
 	private:
 		int					_raw_bits;

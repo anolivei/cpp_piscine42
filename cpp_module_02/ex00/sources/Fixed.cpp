@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:11 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 10:39:04 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/21 14:12:51 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,55 @@
 
 Fixed::Fixed(void)
 {
-    this->_raw_bits = 0;
-    return ;
+	std::cout
+		<< "Default constructor called"
+		<< std::endl;
+	this->_raw_bits = 0;
+	return ;
 }
 
 Fixed::Fixed(const Fixed& copy)
 {
-    *this = copy;
-    return ;
+	std::cout
+		<< "Copy constructor called"
+		<< std::endl;
+	*this = copy;
+	return ;
 }
 
 Fixed::~Fixed(void)
 {
-    return ;
+	std::cout
+		<< "Destructor called"
+		<< std::endl;
+	return ;
 }
 
 Fixed& Fixed::operator=(const Fixed& copy)
 {
-    if (this != &copy)
-        this->_raw_bits = copy.get_raw_bits();
-    return (*this);
+	std::cout
+		<< "Copy assignment operator called"
+		<< std::endl;
+	if (this != &copy)
+		this->_raw_bits = copy.getRawBits();
+	return (*this);
 }
 
-int Fixed::get_raw_bits(void) const
+int Fixed::getRawBits(void) const
 {
-    return (this->_raw_bits);
+	std::cout
+		<< "getRawBits member function called"
+		<< std::endl;
+	return (this->_raw_bits);
 }
 
-void    Fixed::set_raw_bits(int const raw)
+void    Fixed::setRawBits(int const raw)
 {
-    this->_raw_bits = raw;
-    return ;
+	std::cout
+		<< "setRawBits member function called"
+		<< std::endl;
+	this->_raw_bits = raw;
+	return ;
 }
 
 int const	Fixed::_fractional_bits = 8;
