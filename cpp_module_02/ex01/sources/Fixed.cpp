@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:11 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 23:12:43 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/22 19:21:31 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,21 @@ Fixed::Fixed(const Fixed& copy)
 	return ;
 }
 
-Fixed::Fixed(const int num)
+Fixed::Fixed(const int int_num)
 {
 	std::cout
 		<< "Int constructor called"
 		<< std::endl;
-	this->_raw_bits = num << this->_fractional_bits;
+	this->_raw_bits = int_num << this->_fractional_bits;
 	return ;
 }
 
-Fixed::Fixed(const float num)
+Fixed::Fixed(const float float_num)
 {
-	int	power;
-
-	power = pow(2, this->_fractional_bits);
 	std::cout
 		<< "Float constructor called"
 		<< std::endl;
-		this->_raw_bits = roundf(num * power);
+		this->_raw_bits = roundf(float_num * (1 << this->_fractional_bits));
 	return ;
 }
 
@@ -90,12 +87,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	int		power;
-	float	ret;
-
-	power = pow(2, this->_fractional_bits);
-	ret = (float)this->_raw_bits / power;
-	return (ret);
+	return	((float)(this->_raw_bits / (float)(1 << this->_fractional_bits)));
 }
 
 int	Fixed::toInt(void) const
@@ -104,3 +96,25 @@ int	Fixed::toInt(void) const
 }
 
 int const	Fixed::_fractional_bits = 8;
+
+
+/*
+** to better understand bitwise
+**
+** a = 10;
+** b = a << 4;
+** b = 10 * 2**4;
+** b = 10 * 16;
+** b = 160;
+**
+** a = 5;
+** b = a >> 1;
+** a = 0101 
+** (drop right one and put a zero on the left)
+** b = 0010;
+** b = 2;
+** taht is the same of 5 / 2
+**
+** 1 << this->_fractional_bits = pow(2, this->_fractional_bits) = 2^8 = 256
+**
+*/

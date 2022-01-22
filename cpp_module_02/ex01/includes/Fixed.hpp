@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed_01.hpp                                       :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 22:55:34 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/22 18:09:42 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 class Fixed
 {
 	public:
-		Fixed(void); // default constructor
-		Fixed(const Fixed& copy); // copy constructor
-		Fixed(const int num); // int contructor
-		Fixed(const float num); // float constructor
-		~Fixed(void); // destructor
+		Fixed(void);							// default constructor
+		Fixed(const Fixed& copy);				// copy constructor
+		Fixed(const int int_num);				// int contructor
+		Fixed(const float float_num);			// float constructor
+		~Fixed(void);							// destructor
 
-		Fixed&	operator=(const Fixed& copy); // copy assignment operator overload
+		Fixed&	operator=(const Fixed& copy);	// copy assignment operator overload
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
