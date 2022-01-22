@@ -6,12 +6,14 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 15:59:16 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/21 22:55:34 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
+
+#include <iostream>
 
 class Fixed
 {
@@ -22,13 +24,13 @@ class Fixed
 		Fixed(const float num); // float constructor
 		~Fixed(void); // destructor
 
-		Fixed& operator=(const Fixed& copy); //copy assignment operator overload
+		Fixed&	operator=(const Fixed& copy); // copy assignment operator overload
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		float	toFloat(void) const;
+		int		toInt(void) const;
 
 	private:
 		int					_raw_bits;

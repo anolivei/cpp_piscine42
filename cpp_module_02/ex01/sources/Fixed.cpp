@@ -6,12 +6,13 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:11 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/21 16:56:49 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/21 23:12:43 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed_01.hpp"
+#include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed(void)
 {
@@ -34,13 +35,22 @@ Fixed::Fixed(const Fixed& copy)
 Fixed::Fixed(const int num)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< "Int constructor called"
 		<< std::endl;
+	this->_raw_bits = num << this->_fractional_bits;
+	return ;
 }
 
 Fixed::Fixed(const float num)
 {
-	
+	int	power;
+
+	power = pow(2, this->_fractional_bits);
+	std::cout
+		<< "Float constructor called"
+		<< std::endl;
+		this->_raw_bits = roundf(num * power);
+	return ;
 }
 
 Fixed::~Fixed(void)
@@ -51,7 +61,7 @@ Fixed::~Fixed(void)
 	return ;
 }
 
-Fixed& Fixed::operator=(const Fixed& copy)
+Fixed&	Fixed::operator=(const Fixed& copy)
 {
 	std::cout
 		<< "Copy assignment operator called"
@@ -60,27 +70,37 @@ Fixed& Fixed::operator=(const Fixed& copy)
 		this->_raw_bits = copy.getRawBits();
 	return (*this);
 }
-std::ostream & operator<<(std::ostream& o, const Fixed& fixed)
+
+std::ostream&	operator<<(std::ostream& o, const Fixed& fixed)
 {
-	o << fixed.getRawBits();
-	return o;
+	o << fixed.toFloat();
+	return (o);
 }
 
-int Fixed::getRawBits(void) const
+int	Fixed::getRawBits(void) const
 {
-	std::cout
-		<< "getRawBits member function called"
-		<< std::endl;
 	return (this->_raw_bits);
 }
 
-void    Fixed::setRawBits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
-	std::cout
-		<< "setRawBits member function called"
-		<< std::endl;
 	this->_raw_bits = raw;
 	return ;
+}
+
+float	Fixed::toFloat(void) const
+{
+	int		power;
+	float	ret;
+
+	power = pow(2, this->_fractional_bits);
+	ret = (float)this->_raw_bits / power;
+	return (ret);
+}
+
+int	Fixed::toInt(void) const
+{
+	return (this->_raw_bits >> this->_fractional_bits);
 }
 
 int const	Fixed::_fractional_bits = 8;
