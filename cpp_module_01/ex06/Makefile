@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 23:59:41 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/16 02:15:31 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/21 21:30:16 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,6 @@ all:	$(NAME)
 clean:
 		@$(RM) $(OBJS)
 		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
-		@$(RM) *.replace
-		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving .replace files\033[0m"
 
 fclean:	clean
 		@$(RM) $(NAME)
