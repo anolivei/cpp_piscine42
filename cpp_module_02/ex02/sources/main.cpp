@@ -6,11 +6,11 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 19:02:06 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/22 20:37:47 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/22 21:37:32 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed1.hpp"
+#include "Fixed.hpp"
 #include <iostream>
 
 int	main(void)
