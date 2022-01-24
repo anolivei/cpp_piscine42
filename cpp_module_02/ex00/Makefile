@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 19:02:04 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/21 21:29:51 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/24 00:16:25 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS =	Fixed.o \
 SRC =	./sources/Fixed.cpp \
 		./sources/main.cpp
 
-CC	= clang++
+CC	= c++
 
 RM	= rm -rf
 

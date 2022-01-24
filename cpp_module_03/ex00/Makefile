@@ -6,19 +6,19 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 19:02:04 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/24 00:16:07 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/24 01:58:31 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME = claptrap
 
-INCLUDES	= includes/
+INCLUDES	= ./
 
-OBJS =	Fixed.o \
+OBJS =	ClapTrap.o \
 		main.o
 
-SRC =	./sources/Fixed.cpp \
-		./sources/main.cpp
+SRC =	ClapTrap.cpp \
+		main.cpp
 
 CC	= c++
 

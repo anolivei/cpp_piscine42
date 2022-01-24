@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 19:02:04 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/23 03:05:04 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/24 00:31:14 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ INCLUDES	= includes/
 OBJS =	Fixed.o \
 		Point.o \
 		main.o \
-		sources.o
+		bsp.o
 
 SRC =	./sources/Fixed.cpp \
 		./sources/Point.cpp \
 		./sources/main.cpp \
 		./sources/bsp.cpp
 
-CC	= clang++
+CC	= c++
 
 RM	= rm -rf
 
