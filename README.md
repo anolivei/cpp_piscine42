@@ -59,8 +59,6 @@ There are nine modules and the topics covered by each module are:
 Here are some useful links:
 - [Notion](https://www.notion.so/CPP-Piscine-e28af1f755bf4af6b955cb445b4ad6a3)
 - [CPP Wiki](https://github.com/qingqingqingli/CPP/wiki)
-- [To help: Ex03 M03 - Inheritance — Multiple and Virtual Inheritance - What is the “dreaded diamond"](https://isocpp.org/wiki/faq/multiple-inheritance)
-- [To help: Ex02 M07](https://www.youtube.com/watch?v=TzB5ZeKQIHM)
 
 ## Technologies ##
 
