@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/24 01:50:55 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/24 23:36:02 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void ClapTrap::attack(const std::string& target)
 	{
 		set_energy_points(this->_energy_points - 1);
 		std::cout
-			<< "ClapTrap "
+			<< "[POW]    ClapTrap "
 			<< get_name()
 			<< " attacks "
 			<< target
@@ -113,7 +113,8 @@ void ClapTrap::attack(const std::string& target)
 	else
 	{
 		std::cout
-			<< "Energy points equals to zero"
+			<< get_name()
+			<< " is out of energy..."
 			<< std::endl;
 	}
 }
@@ -121,11 +122,61 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (get_hit_points() > 0)
+	{
 		set_hit_points(this->_hit_points - amount);
+		std::cout
+			<< "[OUCH]   ClapTrap "
+			<< get_name()
+			<< " took "
+			<< amount
+			<< " points of damage!"
+			<< std::endl;
+	}
+	else
+	{
+		std::cout
+			<< "[F]      "
+			<< get_name()
+			<< " is dead..."
+			<< std::endl;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	set_hit_points(this->_hit_points + amount);
-	set_energy_points(this->_energy_points - 1);
+	if (get_energy_points() > 0)
+	{
+		set_hit_points(this->_hit_points + amount);
+		set_energy_points(this->_energy_points - 1);
+		std::cout
+			<< "[REPAIR] ClapTrap "
+			<< get_name()
+			<< " repaired "
+			<< amount
+			<< " hit points!"
+			<< std::endl;
+	}
+	else
+	{
+		std::cout
+			<< "[TIRED]  "
+			<< get_name()
+			<< " is out of energy..."
+			<< std::endl;
+	}
+}
+
+std::ostream&	operator<<(std::ostream& o, const ClapTrap& clap_trap)
+{
+	o
+		<< "[STATUS] "
+		<< clap_trap.get_name()
+		<< " - Hit Points:"
+		<< clap_trap.get_hit_points()
+		<< " Energy Points:"
+		<< clap_trap.get_energy_points()
+		<< " Atack Damage:"
+		<< clap_trap.get_atack_damage()
+		<< std::endl;
+	return (o);
 }

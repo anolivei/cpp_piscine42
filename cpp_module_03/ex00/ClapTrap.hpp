@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:30 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/24 01:47:08 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/24 23:08:00 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ class ClapTrap
 		int			_energy_points;
 		int			_atack_damage;
 };
+
+std::ostream&	operator<<(std::ostream& o, const ClapTrap& clap_trap);
 
 #endif

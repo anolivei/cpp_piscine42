@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:32:10 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/24 01:51:14 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/24 23:29:18 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,21 @@
 
 int main(void)
 {
-	ClapTrap	whitewalker("whitewalker");
-	ClapTrap	john_snow("John Snow");
+	ClapTrap	night_king("Night King");
+	ClapTrap	arya_stark("Arya Stark");
 
-	john_snow.attack(whitewalker.get_name());
+	arya_stark.set_atack_damage(5);
+	arya_stark.attack(night_king.get_name());
+	std::cout << arya_stark;
+	night_king.takeDamage(5);
+	std::cout << night_king;
+	night_king.beRepaired(5);
+	arya_stark.set_atack_damage(10);
+	arya_stark.attack(night_king.get_name());
+	night_king.takeDamage(10);
+	arya_stark.attack(night_king.get_name());
+	night_king.takeDamage(10);
+	std::cout << arya_stark;
+	std::cout << night_king;
 	return (0);
 }
