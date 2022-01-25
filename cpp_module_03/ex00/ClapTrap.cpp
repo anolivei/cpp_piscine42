@@ -6,14 +6,14 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/24 23:36:02 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 14:06:02 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("no name"), _hit_points(10),
+ClapTrap::ClapTrap(void) : _name("He Who Must Not Be Named"), _hit_points(10),
 	_energy_points(10), _atack_damage(0)
 {
 	std::cout
