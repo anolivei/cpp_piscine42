@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:32:10 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 14:00:30 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 21:17:36 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main(void)
 	std::cout << night_king;
 
 	doge.high_fives_guys();
+	doge.attack(arya_stark.get_name());
 	std::cout << doge;
 
 	return (0);

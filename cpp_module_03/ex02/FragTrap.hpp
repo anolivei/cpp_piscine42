@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:30 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 14:03:43 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 21:14:47 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class FragTrap : public ClapTrap
 		FragTrap&	operator=(const FragTrap &obj);
 
 		void		high_fives_guys(void);
+		void		attack(const std::string& target);
 };
 
 std::ostream&	operator<<(std::ostream& o, const FragTrap& frag_trap);

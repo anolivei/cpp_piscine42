@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 20:16:08 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 21:15:50 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,31 @@ void	FragTrap::high_fives_guys(void)
 		<< " says: Hi five folks! Very teamwork! So wow!"
 		<< std::endl;
 }
+
+void	FragTrap::attack(const std::string& target)
+{
+	if (get_energy_points() > 0)
+	{
+		set_energy_points(this->_energy_points - 1);
+		std::cout
+			<< "[BAM!]   FragTrap "
+			<< get_name()
+			<< " attacks "
+			<< target
+			<< ", causing "
+			<< get_atack_damage()
+			<< " points of damage!"
+			<< std::endl;
+	}
+	else
+	{
+		std::cout
+			<< get_name()
+			<< " is out of energy..."
+			<< std::endl;
+	}
+}
+
 std::ostream&	operator<<(std::ostream& o, const FragTrap& frag_trap)
 {
 	o
