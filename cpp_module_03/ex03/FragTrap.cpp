@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 20:55:55 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 21:20:23 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,32 @@ FragTrap &FragTrap::operator=(const FragTrap &obj)
 	return (*this);
 }
 
+void	FragTrap::attack(const std::string& target)
+{
+	if (get_energy_points() > 0)
+	{
+		set_energy_points(this->_energy_points - 1);
+		std::cout
+			<< GREEN
+			<< "[BAM!]   FragTrap "
+			<< get_name()
+			<< " attacks "
+			<< target
+			<< ", causing "
+			<< get_atack_damage()
+			<< " points of damage!"
+			<< RESET
+			<< std::endl;
+	}
+	else
+	{
+		std::cout
+			<< get_name()
+			<< " is out of energy..."
+			<< std::endl;
+	}
+}
+
 void	FragTrap::high_fives_guys(void)
 {
 	std::cout
@@ -87,6 +113,7 @@ void	FragTrap::high_fives_guys(void)
 		<< RESET
 		<< std::endl;
 }
+
 std::ostream&	operator<<(std::ostream& o, const FragTrap& frag_trap)
 {
 	o
