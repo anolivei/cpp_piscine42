@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:32:10 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 18:32:19 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:01:50 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ int main(void)
 	FragTrap	doge("Doge");
 	DiamondTrap	frankenstein("Frankenstein");
 	DiamondTrap	voldemort;
+
+	std::cout << voldemort;
+	std::cout << night_king;
+	std::cout << doge;
 
 	arya_stark.set_atack_damage(5);
 	arya_stark.attack(night_king.get_name());
@@ -58,7 +62,11 @@ int main(void)
 	frankenstein.who_am_i();
 	std::cout << frankenstein;
 	frankenstein.attack(arya_stark.get_name());
-	
+
+	std::cout << voldemort;
 	voldemort.who_am_i();
+	voldemort.guard_gate();
+	voldemort.high_fives_guys();
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 21:20:23 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:21:44 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 #define GREEN	"\e[0;32m"
 #define RESET	"\e[0m"
 
+int	FragTrap::_start_hit_points = 100;
+int	FragTrap::_start_energy_points = 100;
+int	FragTrap::_start_atack_damage = 30;
+
 FragTrap::FragTrap(void)
 {
 	this->set_name("He Who Must Not Be Named");
-	this->set_hit_points(ClapTrap::get_hit_points());
-	this->set_energy_points(100);
-	this->set_atack_damage(30);
+	this->set_hit_points(_start_hit_points);
+	this->set_energy_points(_start_energy_points);
+	this->set_atack_damage(_start_atack_damage);
 	std::cout
 		<< GREEN
 		<< "FragTrap default constructor called"
@@ -44,9 +48,9 @@ FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 FragTrap::FragTrap(std::string name)
 {
 	this->set_name(name);
-	this->set_hit_points(ClapTrap::get_hit_points());
-	this->set_energy_points(100);
-	this->set_atack_damage(30);
+	this->set_hit_points(_start_hit_points);
+	this->set_energy_points(_start_energy_points);
+	this->set_atack_damage(_start_atack_damage);
 	std::cout
 		<< GREEN
 		<< "FragTrap string constructor called"

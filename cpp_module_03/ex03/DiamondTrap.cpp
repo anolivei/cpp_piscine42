@@ -16,14 +16,13 @@
 #define PINK	"\e[0;38;5;199m"
 #define RESET	"\e[0m"
 
-DiamondTrap::DiamondTrap(void): ClapTrap("Clap He Who Must Not Be Named"),
-	ScavTrap("He Who Must Not Be Named"), FragTrap("He Who Must Not Be Named")
+DiamondTrap::DiamondTrap(void)
 {
 	ClapTrap::_name = "Clap He Who Must Not Be Named";
 	this->_name = "He Who Must Not Be Named";
-	this->set_hit_points(FragTrap::get_hit_points());
-	this->set_energy_points(ScavTrap::get_energy_points());
-	this->set_atack_damage(FragTrap::get_atack_damage());
+	this->set_hit_points(FragTrap::_start_hit_points);
+	this->set_energy_points(ScavTrap::_start_energy_points);
+	this->set_atack_damage(FragTrap::_start_atack_damage);
 	std::cout
 		<< PINK
 		<< "DiamondTrap default constructor called"
@@ -32,7 +31,7 @@ DiamondTrap::DiamondTrap(void): ClapTrap("Clap He Who Must Not Be Named"),
 	return ;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj), 
+DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(obj), 
 	ScavTrap(obj), FragTrap(obj)
 {
 	std::cout
@@ -48,9 +47,9 @@ DiamondTrap::DiamondTrap(std::string name)
 {
 	ClapTrap::set_name("Clap" + name);
 	this->set_name(name);
-	this->set_hit_points(FragTrap::get_hit_points());
-	this->set_energy_points(ScavTrap::get_energy_points());
-	this->set_atack_damage(FragTrap::get_atack_damage());
+	this->set_hit_points(FragTrap::_start_hit_points);
+	this->set_energy_points(ScavTrap::_start_energy_points);
+	this->set_atack_damage(FragTrap::_start_atack_damage);
 	std::cout
 		<< PINK
 		<< "DiamondTrap string constructor called"
@@ -90,7 +89,6 @@ void	DiamondTrap::set_name(std::string name)
 {
 	this->_name = name;
 }
-
 
 void	DiamondTrap::attack(std::string const& target)
 {

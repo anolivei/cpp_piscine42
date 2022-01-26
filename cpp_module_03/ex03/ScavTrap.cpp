@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 21:00:17 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 23:22:05 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 #define CYAN	"\e[0;36m"
 #define RESET	"\e[0m"
 
+int	ScavTrap::_start_hit_points = 100;
+int	ScavTrap::_start_energy_points = 50;
+int	ScavTrap::_start_atack_damage = 20;
+
 ScavTrap::ScavTrap(void)
 {
 	this->set_name("He Who Must Not Be Named");
-	this->set_hit_points(100);
-	this->set_energy_points(50);
-	this->set_atack_damage(20);
+	this->set_hit_points(_start_hit_points);
+	this->set_energy_points(_start_energy_points);
+	this->set_atack_damage(_start_atack_damage);
 	std::cout
 		<< CYAN
 		<< "ScavTrap default constructor called"
@@ -44,9 +48,9 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 ScavTrap::ScavTrap(std::string name)
 {
 	this->set_name(name);
-	this->set_hit_points(100);
-	this->set_energy_points(50);
-	this->set_atack_damage(20);
+	this->set_hit_points(_start_hit_points);
+	this->set_energy_points(_start_energy_points);
+	this->set_atack_damage(_start_atack_damage);
 	std::cout
 		<< CYAN
 		<< "ScavTrap string constructor called"
