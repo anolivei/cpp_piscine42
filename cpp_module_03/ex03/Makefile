@@ -6,11 +6,11 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/16 19:02:04 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/25 18:30:53 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/25 21:01:12 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = weird
+NAME = diamond
 
 INCLUDES	= ./
 
@@ -30,7 +30,7 @@ CC	= c++
 
 RM	= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -g -fsanitize=address -Wshadow -Wno-shadow
+CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -g -fsanitize=address -Wshadow
 
 $(NAME):	$(SRC) $(OBJ)
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"

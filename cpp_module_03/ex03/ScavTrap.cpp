@@ -6,12 +6,15 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 14:05:44 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 21:00:17 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ScavTrap.hpp"
+
+#define CYAN	"\e[0;36m"
+#define RESET	"\e[0m"
 
 ScavTrap::ScavTrap(void)
 {
@@ -20,7 +23,9 @@ ScavTrap::ScavTrap(void)
 	this->set_energy_points(50);
 	this->set_atack_damage(20);
 	std::cout
+		<< CYAN
 		<< "ScavTrap default constructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -28,7 +33,9 @@ ScavTrap::ScavTrap(void)
 ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
 	std::cout
+		<< CYAN
 		<< "ScavTrap copy constructor called"
+		<< RESET
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -41,7 +48,9 @@ ScavTrap::ScavTrap(std::string name)
 	this->set_energy_points(50);
 	this->set_atack_damage(20);
 	std::cout
+		<< CYAN
 		<< "ScavTrap string constructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -49,7 +58,9 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::~ScavTrap(void)
 {
 	std::cout
+		<< CYAN
 		<< "ScavTrap destructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -73,6 +84,7 @@ void ScavTrap::attack(const std::string& target)
 	{
 		set_energy_points(this->_energy_points - 1);
 		std::cout
+			<< CYAN
 			<< "[KAPOW]  ScavTrap "
 			<< get_name()
 			<< " attacks "
@@ -80,13 +92,16 @@ void ScavTrap::attack(const std::string& target)
 			<< ", causing "
 			<< get_atack_damage()
 			<< " points of damage!"
+			<< RESET
 			<< std::endl;
 	}
 	else
 	{
 		std::cout
+			<< CYAN
 			<< get_name()
 			<< " is out of energy..."
+			<< RESET
 			<< std::endl;
 	}
 }
@@ -94,14 +109,17 @@ void ScavTrap::attack(const std::string& target)
 void	ScavTrap::guard_gate(void)
 {
 	std::cout
+		<< CYAN
 		<< "[GRRRR]  Scavtrap "
 		<< this->get_name()
 		<< " is now in Gate keeper mode!"
+		<< RESET
 		<< std::endl;
 }
 std::ostream&	operator<<(std::ostream& o, const ScavTrap& scav_trap)
 {
 	o
+		<< CYAN
 		<< "[STATUS] "
 		<< scav_trap.get_name()
 		<< " - Hit Points:"
@@ -110,6 +128,7 @@ std::ostream&	operator<<(std::ostream& o, const ScavTrap& scav_trap)
 		<< scav_trap.get_energy_points()
 		<< " Atack Damage:"
 		<< scav_trap.get_atack_damage()
+		<< RESET
 		<< std::endl;
 	return (o);
 }

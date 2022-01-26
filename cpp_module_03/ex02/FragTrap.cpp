@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:27:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 14:11:46 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/25 20:16:08 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 FragTrap::FragTrap(void)
 {
 	this->set_name("He Who Must Not Be Named");
-	this->set_hit_points(ClapTrap::get_hit_points());
+	this->set_hit_points(100);
 	this->set_energy_points(100);
 	this->set_atack_damage(30);
 	std::cout
@@ -37,7 +37,7 @@ FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
 FragTrap::FragTrap(std::string name)
 {
 	this->set_name(name);
-	this->set_hit_points(ClapTrap::get_hit_points());
+	this->set_hit_points(100);
 	this->set_energy_points(100);
 	this->set_atack_damage(30);
 	std::cout
