@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 01:11:17 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 01:24:14 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 int main(void) 
 {
+	std::cout << "--------------------ANIMAL--------------------" << std::endl;
+
 	const Animal *i = new Cat();
 	const Animal *j = new Dog();
 	const Animal *meta = new Animal();
@@ -38,7 +40,7 @@ int main(void)
 	delete j;
 	delete meta;
 
-	std::cout << "----------------------------------------------" << std::endl;
+	std::cout << "-----------------WRONG-ANIMAL-----------------" << std::endl;
 
 	const WrongAnimal *k = new WrongCat();
 	const WrongAnimal *wrong_meta = new WrongAnimal();
