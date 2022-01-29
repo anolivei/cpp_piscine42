@@ -6,17 +6,21 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:42:32 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/26 23:42:36 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:43:48 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Animal.hpp"
 
-Animal::Animal(void)
+#define GREEN	"\e[0;32m"
+#define RESET	"\e[0m"
+
+Animal::Animal(void) : _type("Animal")
 {
 	std::cout
-		<< "Default constructor called"
+		<< GREEN
+		<< "Animal default constructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -24,7 +28,9 @@ Animal::Animal(void)
 Animal::Animal(const Animal& obj)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< GREEN
+		<< "Animal copy constructor called"
+		<< RESET
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -33,7 +39,9 @@ Animal::Animal(const Animal& obj)
 Animal::~Animal(void)
 {
 	std::cout
-		<< "Destructor called"
+		<< GREEN
+		<< "Animal destructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -41,8 +49,37 @@ Animal::~Animal(void)
 Animal& Animal::operator=(const Animal& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
+}
+
+std::ostream& operator<<(std::ostream& o, Animal const& animal)
+{
+	o
+		<< GREEN
+		<< "Animal type is: "
+		<< animal.get_type()
+		<< RESET
+		<< std::endl;
+	return (o);
+}
+
+void	Animal::set_type(std::string type)
+{
+	this->_type = type;
+}
+
+std::string	Animal::get_type(void) const
+{
+	return (this->_type);
+}
+
+void	Animal::make_sound(void) const
+{
+	std::cout
+		<< GREEN
+		<< get_type()
+		<< " makes an animal sound"
+		<< RESET
+		<< std::endl;
 }

@@ -6,23 +6,56 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/26 23:32:54 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:19:47 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main() 
+int main(void) 
 {
-    const Animal* meta = new Animal(); const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl; std::cout << i->getType() << " " << std::endl; i->makeSound(); //will output the cat sound! j->makeSound();
-        meta->makeSound();
-        ...
-    return 0;
+	const Animal *i = new Cat();
+	const Animal *j = new Dog();
+	const Animal *meta = new Animal();
+
+	std::cout << "----------------------------------------------" << std::endl;
+
+	std::cout << i->get_type() << " " << std::endl;
+	std::cout << j->get_type() << " " << std::endl;
+
+	std::cout << *i<< " " << std::endl;
+	std::cout << *j<< " " << std::endl;
+
+	i->make_sound();
+	j->make_sound();
+	meta->make_sound();
+
+	std::cout << "----------------------------------------------" << std::endl;
+
+	delete i;
+	delete j;
+	delete meta;
+
+	std::cout << "----------------------------------------------" << std::endl;
+
+	const WrongAnimal *k = new WrongCat();
+	const WrongAnimal *wrong_meta = new WrongAnimal();
+
+	std::cout << "----------------------------------------------" << std::endl;
+
+	std::cout << k->get_type() << " " << std::endl;
+
+	std::cout << *k<< " " << std::endl;
+
+	wrong_meta->make_sound();
+	k->make_sound();
+
+	std::cout << "----------------------------------------------" << std::endl;
+
+	delete wrong_meta;
+	delete k;
+
+	return (0);
 }

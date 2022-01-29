@@ -6,17 +6,21 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:45:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/26 23:45:47 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:37:40 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "WrongCat.hpp"
+#define PINK	"\e[0;38;5;199m"
+#define RESET	"\e[0m"
 
 WrongCat::WrongCat(void)
 {
+	set_type("WrongCat");
 	std::cout
-		<< "Default constructor called"
+		<< PINK
+		<< "WrongCat default constructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -24,7 +28,9 @@ WrongCat::WrongCat(void)
 WrongCat::WrongCat(const WrongCat& obj)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< PINK
+		<< "WrongCat copy constructor called"
+		<< RESET
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -33,16 +39,36 @@ WrongCat::WrongCat(const WrongCat& obj)
 WrongCat::~WrongCat(void)
 {
 	std::cout
-		<< "Destructor called"
+		<< PINK
+		<< "WrongCaty destructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
 
-WrongCat& WrongCat::operator=(const WrongCat& obj)
+std::ostream&	operator<<(std::ostream& o, const WrongCat& wrong_cat)
+{
+	o
+		<< PINK
+		<< "WrongCat type is: "
+		<< wrong_cat.get_type()
+		<< RESET;
+	return (o);
+}
+
+WrongCat&	WrongCat::operator=(const WrongCat& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
+}
+
+void	WrongCat::make_sound(void) const
+{
+	std::cout
+		<< PINK
+		<< get_type()
+		<< " says Meowth! That's right! 😼 "
+		<< RESET
+		<< std::endl;
 }

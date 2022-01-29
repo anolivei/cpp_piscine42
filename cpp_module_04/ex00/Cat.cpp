@@ -6,17 +6,21 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:46:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/26 23:46:11 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:32:50 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Cat.hpp"
+#define LILAC	"\e[0;38;5;13m"
+#define RESET	"\e[0m"
 
 Cat::Cat(void)
 {
+	set_type("Cat");
 	std::cout
-		<< "Default constructor called"
+		<< LILAC
+		<< "Cat default constructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -24,7 +28,9 @@ Cat::Cat(void)
 Cat::Cat(const Cat& obj)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< LILAC
+		<< "Cat copy constructor called"
+		<< RESET
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -33,16 +39,36 @@ Cat::Cat(const Cat& obj)
 Cat::~Cat(void)
 {
 	std::cout
-		<< "Destructor called"
+		<< LILAC
+		<< "Cat destructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
 
-Cat& Cat::operator=(const Cat& obj)
+std::ostream&	operator<<(std::ostream& o, const Cat& cat)
+{
+	o
+		<< LILAC
+		<< "Cat type is: " 
+		<< cat.get_type()
+		<< RESET;
+	return (o);
+}
+
+Cat&	Cat::operator=(const Cat& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
+}
+
+void	Cat::make_sound(void) const
+{
+	std::cout
+		<< LILAC
+		<< get_type()
+		<< " says Meowth! That's right! 😼 "
+		<< RESET
+		<< std::endl;
 }

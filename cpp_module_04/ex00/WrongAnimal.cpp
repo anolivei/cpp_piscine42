@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongWrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:45:29 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/26 23:45:30 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:05:45 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void)
+#define BLUE	"\e[0;34m"
+#define RESET	"\e[0m"
+
+WrongAnimal::WrongAnimal(void) : _type("Wrong Animal")
 {
 	std::cout
-		<< "Default constructor called"
+		<< BLUE
+		<< "WrongAnimal default constructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -24,7 +28,9 @@ WrongAnimal::WrongAnimal(void)
 WrongAnimal::WrongAnimal(const WrongAnimal& obj)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< BLUE
+		<< "WrongAnimal copy constructor called"
+		<< RESET
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -33,7 +39,9 @@ WrongAnimal::WrongAnimal(const WrongAnimal& obj)
 WrongAnimal::~WrongAnimal(void)
 {
 	std::cout
-		<< "Destructor called"
+		<< BLUE
+		<< "WrongAnimal destructor called"
+		<< RESET
 		<< std::endl;
 	return ;
 }
@@ -41,8 +49,37 @@ WrongAnimal::~WrongAnimal(void)
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
+}
+
+std::ostream& operator<<(std::ostream& o, WrongAnimal const& WrongAnimal)
+{
+	o
+		<< BLUE
+		<< "WrongAnimal type is: "
+		<< WrongAnimal.get_type()
+		<< RESET
+		<< std::endl;
+	return (o);
+}
+
+void	WrongAnimal::set_type(std::string type)
+{
+	this->_type = type;
+}
+
+std::string	WrongAnimal::get_type(void) const
+{
+	return (this->_type);
+}
+
+void	WrongAnimal::make_sound(void) const
+{
+	std::cout
+		<< BLUE
+		<< get_type()
+		<< " makes a WrongAnimal sound"
+		<< RESET
+		<< std::endl;
 }

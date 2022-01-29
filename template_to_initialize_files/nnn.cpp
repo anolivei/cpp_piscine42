@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nnn.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/28 01:59:44 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/28 01:59:45 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "nnn.hpp"
 
 nnn::nnn(void)
 {
 	std::cout
-		<< "Default constructor called"
+		<< "nnn default constructor called"
 		<< std::endl;
 	return ;
 }
@@ -12,7 +24,7 @@ nnn::nnn(void)
 nnn::nnn(const nnn& obj)
 {
 	std::cout
-		<< "Copy constructor called"
+		<< "nnn copy constructor called"
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -21,7 +33,7 @@ nnn::nnn(const nnn& obj)
 nnn::~nnn(void)
 {
 	std::cout
-		<< "Destructor called"
+		<< "nnn destructor called"
 		<< std::endl;
 	return ;
 }
@@ -33,4 +45,10 @@ nnn& nnn::operator=(const nnn& obj)
 		this->XXX = obj.XXX();
 	}
 	return (*this);
+}
+
+std::ostream&	operator<<(std::ostream& o, const nnn& i)
+{
+	o << "something";
+	return o;
 }
