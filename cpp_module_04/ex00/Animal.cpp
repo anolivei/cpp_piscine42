@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:42:32 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/28 02:43:48 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 01:12:25 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ std::ostream& operator<<(std::ostream& o, Animal const& animal)
 		<< GREEN
 		<< "Animal type is: "
 		<< animal.get_type()
-		<< RESET
-		<< std::endl;
+		<< RESET;
 	return (o);
 }
 

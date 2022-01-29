@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:45:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/28 02:37:40 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 01:10:20 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ WrongCat::~WrongCat(void)
 {
 	std::cout
 		<< PINK
-		<< "WrongCaty destructor called"
+		<< "WrongCat destructor called"
 		<< RESET
 		<< std::endl;
 	return ;

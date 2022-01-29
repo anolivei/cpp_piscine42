@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:45:36 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/28 02:23:37 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 01:03:41 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
 		void			set_type(std::string type);
 		std::string		get_type(void) const;
 
-		virtual void	make_sound(void) const;
+		void	make_sound(void) const;
 
 	protected:
 		std::string		_type;

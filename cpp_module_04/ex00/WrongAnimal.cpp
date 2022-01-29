@@ -15,7 +15,7 @@
 #define BLUE	"\e[0;34m"
 #define RESET	"\e[0m"
 
-WrongAnimal::WrongAnimal(void) : _type("Wrong Animal")
+WrongAnimal::WrongAnimal(void) : _type("WrongAnimal")
 {
 	std::cout
 		<< BLUE
@@ -59,8 +59,7 @@ std::ostream& operator<<(std::ostream& o, WrongAnimal const& WrongAnimal)
 		<< BLUE
 		<< "WrongAnimal type is: "
 		<< WrongAnimal.get_type()
-		<< RESET
-		<< std::endl;
+		<< RESET;
 	return (o);
 }
 

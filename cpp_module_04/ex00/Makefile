@@ -6,48 +6,50 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/28 02:23:27 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/29 01:14:26 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animals
 
-INCLUDES	= ./
+SRC =	./main.cpp \
+		./Animal.cpp \
+		./Dog.cpp \
+		./Cat.cpp \
+		./WrongAnimal.cpp \
+		./WrongCat.cpp
 
-OBJS =	Animal.o \
-		Cat.o \
-		Dog.o \
-		WrongAnimal.o \
-		WrongCat.o \
-		main.o
-
-SRC =	Animal.cpp \
-		Cat.cpp \
-		Dog.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
-		main.cpp
+OBJS =	./main.o \
+		./Animal.o \
+		./Dog.o \
+		./Cat.o \
+		./WrongAnimal.o \
+		./WrongCat.o
 
 CC	= c++
 
 RM	= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -g -fsanitize=address -Wshadow
+CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -Wshadow -g -fsanitize=address
 
-$(NAME):	$(SRC) $(OBJ)
+$(NAME):	$(OBJS)
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
-			@$(CC) $(CFLAGS) $(SRC) -o $(NAME) -I $(INCLUDES)
+			@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-all:	$(NAME)
+$(OBJS):	$(SRC)
+			@$(CC) $(CFLAGS) -c $(SRC)
+			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
+
+all:		$(NAME)
 
 clean:
-		@$(RM) $(OBJS)
-		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
+			@$(RM) $(OBJS)
+			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
 
-fclean:	clean
-		@$(RM) $(NAME)
-		@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving $(NAME)\033[0m"
+fclean:		clean
+			@$(RM) $(NAME)
+			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving $(NAME)\033[0m"
 
-re:	fclean all
+re:			fclean all
 
-PHONY:	all clean fclean re
+PHONY:		all clean fclean re

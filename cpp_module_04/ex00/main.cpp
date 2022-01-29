@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/28 14:19:47 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 01:11:17 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int main(void)
 
 	std::cout << *k<< " " << std::endl;
 
-	wrong_meta->make_sound();
 	k->make_sound();
+	wrong_meta->make_sound();
 
 	std::cout << "----------------------------------------------" << std::endl;
 
