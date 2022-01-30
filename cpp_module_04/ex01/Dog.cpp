@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:46:01 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 04:02:09 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 21:24:52 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ Dog::Dog(const Dog& obj)
 
 Dog::~Dog(void)
 {
+	delete this->_brain;
 	std::cout
 		<< V_CYAN
 		<< "Dog destructor called"
