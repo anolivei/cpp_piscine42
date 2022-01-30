@@ -6,19 +6,19 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/29 22:54:22 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/29 22:10:01 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animals
 
-SRC =	./Animal.cpp \
+SRC =	./AAnimal.cpp \
 		./Dog.cpp \
 		./Cat.cpp \
 		./Brain.cpp \
 		./main.cpp
 
-OBJS =	./Animal.o \
+OBJS =	./AAnimal.o \
 		./Dog.o \
 		./Cat.o \
 		./Brain.o \

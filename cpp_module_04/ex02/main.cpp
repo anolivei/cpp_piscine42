@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 22:52:23 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/29 22:12:36 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ int main(void)
 {
 	std::cout << "---------------------HEAP---------------------" << std::endl;
 
-	const Animal*	cat = new Cat();
-	const Animal*	dog = new Dog();
-	const Animal*	animal = new Animal();
+	const AAnimal*	cat = new Cat();
+	const AAnimal*	dog = new Dog();
+	//const AAnimal*	animal = new AAnimal();
 
 	delete	cat;
 	delete	dog;
-	delete	animal;
 
 	std::cout << "--------------------STACK---------------------" << std::endl;
 
@@ -39,7 +38,7 @@ int main(void)
 
 	int		len = 10;
 	int		k = 0;
-	Animal	*tab[len];
+	AAnimal	*tab[len];
 
 	while (k < (len / 2))
 	{
