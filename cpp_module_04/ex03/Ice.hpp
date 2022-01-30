@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 16:38:31 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/30 16:38:32 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICE_HPP
 #define ICE_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 	public:
 		Ice(void);
@@ -12,11 +25,7 @@ class Ice
 
 		Ice&	operator=(const Ice& obj);
 
-	private:
-
-	protected:
+		Ice*	clone(void) const;
 };
-
-std::ostream&	operator<<(std::ostream& o, const Ice& i);
 
 #endif

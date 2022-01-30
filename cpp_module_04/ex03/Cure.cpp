@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 15:51:35 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/30 15:51:57 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
 	std::cout
 		<< "Cure default constructor called"
@@ -8,7 +20,7 @@ Cure::Cure(void)
 	return ;
 }
 
-Cure::Cure(const Cure& obj)
+Cure::Cure(const Cure& obj) : AMateria("cure")
 {
 	std::cout
 		<< "Cure copy constructor called"
@@ -28,14 +40,11 @@ Cure::~Cure(void)
 Cure& Cure::operator=(const Cure& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& o, const Cure& i)
+Cure*	Cure::clone(void) const
 {
-	o << "something";
-	return o;
+	return (new Cure(*this));
 }

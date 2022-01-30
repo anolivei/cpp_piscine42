@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 17:02:08 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 17:47:27 by anolivei         ###   ########.fr       */
+/*   Created: 2022/01/30 16:38:22 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/30 16:48:36 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include <iostream>
 #include "AMateria.hpp"
-#include "IMateriaSource.hpp"
 
-class MateriaSource : public IMateriaSource
+class IMateriaSource
 {
 	public:
-		MateriaSource(void);
-		MateriaSource(const MateriaSource& obj);
-		~MateriaSource(void);
+		virtual ~IMateriaSource(void) {}
 
-		MateriaSource&	operator=(const MateriaSource& obj);
-
-		void			learn_materia(AMateria* m);
-		AMateria*		create_materia(const std::string& type);
-
-	private:
-		AMateria*		_materia[4];
+		virtual void		learn_materia(AMateria*) = 0;
+		virtual AMateria*	create_materia(const std::string& type) = 0;
 };
 
 #endif

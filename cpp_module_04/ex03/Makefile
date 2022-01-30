@@ -6,19 +6,17 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/29 23:21:37 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/30 17:55:26 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animals
+NAME = a.out
 
 SRC =	./AMateria.cpp \
 		./Ice.cpp \
 		./Cure.cpp \
 		./Character.cpp \
 		./MateriaSource.cpp \
-		./ICharacter.cpp \
-		./IMateriaSource.cpp \
 		./main.cpp
 
 OBJS =	./AMateria.o \
@@ -32,7 +30,7 @@ CC	= c++
 
 RM	= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -Wshadow -g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -Wshadow -fsanitize=address
 
 $(NAME):	$(OBJS)
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"

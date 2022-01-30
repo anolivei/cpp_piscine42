@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 23:26:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 23:26:28 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:49:07 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #define CURE_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
 
-class Cure
+class Cure : public AMateria
 {
 	public:
 		Cure(void);
@@ -24,11 +25,7 @@ class Cure
 
 		Cure&	operator=(const Cure& obj);
 
-	private:
-
-	protected:
+		Cure*	clone(void) const;
 };
-
-std::ostream&	operator<<(std::ostream& o, const Cure& i);
 
 #endif

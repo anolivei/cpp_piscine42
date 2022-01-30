@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 15:43:44 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/30 15:46:31 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Ice.hpp"
 
-Ice::Ice(void)
+Ice::Ice(void) : AMateria("ice")
 {
 	std::cout
 		<< "Ice default constructor called"
@@ -8,7 +20,7 @@ Ice::Ice(void)
 	return ;
 }
 
-Ice::Ice(const Ice& obj)
+Ice::Ice(const Ice& obj) : AMateria("ice")
 {
 	std::cout
 		<< "Ice copy constructor called"
@@ -28,14 +40,11 @@ Ice::~Ice(void)
 Ice& Ice::operator=(const Ice& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
 }
 
-std::ostream&	operator<<(std::ostream& o, const Ice& i)
+Ice*	Ice::clone(void) const
 {
-	o << "something";
-	return o;
+	return (new Ice(*this));
 }

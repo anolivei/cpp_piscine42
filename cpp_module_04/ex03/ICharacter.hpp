@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 16:38:26 by anolivei          #+#    #+#             */
+/*   Updated: 2022/01/30 16:38:27 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-class ICharacter
+#include <iostream>
+#include "AMateria.hpp"
+
+class	AMateria;
+
+class	ICharacter
 {
 	public:
-		ICharacter(void);
-		ICharacter(const ICharacter& obj);
-		~ICharacter(void);
-
-		ICharacter&	operator=(const ICharacter& obj);
-
-	private:
-
-	protected:
+		virtual ~ICharacter(void) {}
+		virtual const std::string&	get_name(void) const = 0;
+		virtual void				equip(AMateria* m) = 0;
+		virtual void				unequip(int idx) = 0;
+		virtual void				use(int idx, ICharacter& target) = 0;
 };
-
-std::ostream&	operator<<(std::ostream& o, const ICharacter& i);
 
 #endif

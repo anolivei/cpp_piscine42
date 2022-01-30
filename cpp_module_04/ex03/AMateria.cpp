@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 23:26:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 23:26:01 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/30 15:57:12 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ AMateria::AMateria(void)
 	std::cout
 		<< "AMateria default constructor called"
 		<< std::endl;
+	this->_type = "default";
 	return ;
 }
 
@@ -26,6 +27,15 @@ AMateria::AMateria(const AMateria& obj)
 		<< "AMateria copy constructor called"
 		<< std::endl;
 	*this = obj;
+	return ;
+}
+
+AMateria::AMateria(const std::string& type)
+{
+	std::cout
+		<< "AMateria string constructor called"
+		<< std::endl;
+	this->_type = type;
 	return ;
 }
 
@@ -40,14 +50,39 @@ AMateria::~AMateria(void)
 AMateria& AMateria::operator=(const AMateria& obj)
 {
 	if (this != &obj)
-	{
-		this->XXX = obj.XXX();
-	}
+		this->_type = obj.get_type();
 	return (*this);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	if (get_type() == "ice")
+	{
+		std::cout
+			<< "* shoots an ice bolt at "
+			<< target.get_name()
+			<< " *"
+			<< std::endl;
+	}
+	if (get_type() == "cure")
+	{
+		std::cout
+			<< "* heals "
+			<< target.get_name()
+			<< "'s wounds *"
+			<< std::endl;
+	}
+}
+
+std::string	AMateria::get_type(void) const
+{
+	return (this->_type);
 }
 
 std::ostream&	operator<<(std::ostream& o, const AMateria& i)
 {
-	o << "something";
+	o
+		<< "AMateria type is: "
+		<< i.get_type();
 	return o;
 }
