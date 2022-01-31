@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 01:24:14 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 17:41:20 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int main(void)
 {
 	std::cout << "--------------------ANIMAL--------------------" << std::endl;
 
-	const Animal *i = new Cat();
-	const Animal *j = new Dog();
-	const Animal *meta = new Animal();
+	const Animal	*meta = new Animal();
+	const Animal	*i = new Cat();
+	const Animal	*j = new Dog();
 
 	std::cout << "----------------------------------------------" << std::endl;
 
@@ -42,8 +42,9 @@ int main(void)
 
 	std::cout << "-----------------WRONG-ANIMAL-----------------" << std::endl;
 
-	const WrongAnimal *k = new WrongCat();
-	const WrongAnimal *wrong_meta = new WrongAnimal();
+	const WrongAnimal	*wrong_meta = new WrongAnimal();
+	const WrongAnimal	*k = new WrongCat();
+	const WrongCat		*wrong_cat = new WrongCat();
 
 	std::cout << "----------------------------------------------" << std::endl;
 
@@ -53,11 +54,13 @@ int main(void)
 
 	k->make_sound();
 	wrong_meta->make_sound();
+	wrong_cat->make_sound();
 
 	std::cout << "----------------------------------------------" << std::endl;
 
 	delete wrong_meta;
 	delete k;
+	delete wrong_cat;
 
 	return (0);
 }

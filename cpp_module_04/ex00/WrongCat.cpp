@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:45:46 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 01:10:20 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:06:02 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ WrongCat::WrongCat(void)
 	return ;
 }
 
-WrongCat::WrongCat(const WrongCat& obj)
+WrongCat::WrongCat(const WrongCat& obj) : WrongAnimal(obj)
 {
 	std::cout
 		<< PINK

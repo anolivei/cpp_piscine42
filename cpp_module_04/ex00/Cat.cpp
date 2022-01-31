@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:46:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 01:11:13 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:05:01 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::Cat(void)
 	return ;
 }
 
-Cat::Cat(const Cat& obj)
+Cat::Cat(const Cat& obj) : Animal(obj)
 {
 	std::cout
 		<< LILAC
