@@ -6,11 +6,11 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/29 22:54:22 by anolivei         ###   ########.fr        #
+#    Updated: 2022/01/31 16:26:46 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animals
+NAME = a.out
 
 SRC =	./Animal.cpp \
 		./Dog.cpp \

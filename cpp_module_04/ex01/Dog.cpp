@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:46:01 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 21:24:52 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:25:05 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::Dog(void)
 	return ;
 }
 
-Dog::Dog(const Dog& obj)
+Dog::Dog(const Dog& obj) : Animal(obj)
 {
 	std::cout
 		<< V_CYAN
