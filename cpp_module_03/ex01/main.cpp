@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 00:32:10 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/25 12:28:58 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:36:07 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int main(void)
 	arya_stark.takeDamage(night_king.get_atack_damage());
 	std::cout << arya_stark;
 	std::cout << night_king;
+
+	night_king.guard_gate();
 
 	return (0);
 }

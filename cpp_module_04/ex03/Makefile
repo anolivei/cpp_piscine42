@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/01/30 17:55:26 by anolivei         ###   ########.fr        #
+#    Updated: 2022/02/01 14:34:38 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ CC	= c++
 
 RM	= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g -std=c++98 -Wshadow -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wshadow -g -fsanitize=address
 
 $(NAME):	$(OBJS)
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;199mCompiling\033[0m $@"
