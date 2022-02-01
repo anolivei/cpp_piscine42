@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 16:38:31 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 16:38:32 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 21:49:21 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria
 	public:
 		Ice(void);
 		Ice(const Ice& obj);
-		~Ice(void);
+		virtual ~Ice(void);
 
 		Ice&	operator=(const Ice& obj);
 

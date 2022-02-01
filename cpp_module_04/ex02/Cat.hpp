@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:46:05 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 22:07:34 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:20:52 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public AAnimal
 	public:
 		Cat(void);
 		Cat(const Cat& obj);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		Cat& operator=(const Cat& obj);
 

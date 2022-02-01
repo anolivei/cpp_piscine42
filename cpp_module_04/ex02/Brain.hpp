@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 01:27:44 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 02:32:24 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:20:57 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Brain
 	public:
 		Brain(void);
 		Brain(const Brain& obj);
-		~Brain(void);
+		virtual ~Brain(void);
 
 		Brain&	operator=(const Brain& obj);
 

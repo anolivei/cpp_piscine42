@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:45:57 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/29 22:07:44 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 18:20:45 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public AAnimal
 	public:
 		Dog(void);
 		Dog(const Dog& obj);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		Dog&	operator=(const Dog& obj);
 
