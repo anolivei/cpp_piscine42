@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 23:26:49 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 17:51:34 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 22:44:12 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ Character::Character(const Character& obj)
 		<< "Character copy constructor called"
 		<< std::endl;
 	*this = obj;
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
 	return ;
 }
 

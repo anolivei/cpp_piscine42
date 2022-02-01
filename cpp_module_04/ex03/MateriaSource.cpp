@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:11:32 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 18:07:28 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 22:45:44 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ MateriaSource::MateriaSource(const MateriaSource& obj)
 	std::cout
 		<< "MateriaSource copy constructor called"
 		<< std::endl;
+	for (int i = 0; i < 4; i++)
+		this->_materia[i] = NULL;
 	*this = obj;
 	return ;
 }
@@ -54,6 +56,8 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& obj)
 				delete this->_materia[i];
 			if (obj._materia[i] != NULL)
 				this->_materia[i] = obj._materia[i];
+			else
+				this->_materia[i] = NULL;
 		}
 	}
 	return (*this);
