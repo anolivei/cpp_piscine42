@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 23:26:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 15:57:12 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:15:33 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ AMateria::AMateria(void)
 AMateria::AMateria(const AMateria& obj)
 {
 	std::cout
-		<< "AMateria copy constructor called"
+		<< "AMateria copy constructor called: "
+		<< obj.get_type()
 		<< std::endl;
 	*this = obj;
 	return ;
@@ -33,7 +34,8 @@ AMateria::AMateria(const AMateria& obj)
 AMateria::AMateria(const std::string& type)
 {
 	std::cout
-		<< "AMateria string constructor called"
+		<< "AMateria string constructor called: "
+		<< type
 		<< std::endl;
 	this->_type = type;
 	return ;
@@ -42,15 +44,15 @@ AMateria::AMateria(const std::string& type)
 AMateria::~AMateria(void)
 {
 	std::cout
-		<< "AMateria destructor called"
+		<< "AMateria destructor called: "
+		<< get_type()
 		<< std::endl;
 	return ;
 }
 
 AMateria& AMateria::operator=(const AMateria& obj)
 {
-	if (this != &obj)
-		this->_type = obj.get_type();
+	(void)obj;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:43:44 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 15:46:31 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:26:09 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ Ice::~Ice(void)
 
 Ice& Ice::operator=(const Ice& obj)
 {
-	if (this != &obj)
-		this->_type = obj.get_type();
+	(void)obj;
 	return (*this);
 }
 

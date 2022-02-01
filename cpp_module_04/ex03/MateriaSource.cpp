@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 17:11:32 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/31 22:45:44 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:29:48 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& obj)
 			if (this->_materia[i] != NULL)
 				delete this->_materia[i];
 			if (obj._materia[i] != NULL)
-				this->_materia[i] = obj._materia[i];
+				this->_materia[i] = obj._materia[i]->clone();
 			else
 				this->_materia[i] = NULL;
 		}

@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 23:26:49 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/31 22:44:12 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:23:07 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,41 @@ Character::Character(void)
 	std::cout
 		<< "Character default constructor called"
 		<< std::endl;
-	this->_name = "dafault";
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_name = "dafault";
 	return ;
 }
 
 Character::Character(const Character& obj)
 {
 	std::cout
-		<< "Character copy constructor called"
+		<< "Character copy constructor called: "
+		<< obj.get_name()
 		<< std::endl;
-	*this = obj;
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	*this = obj;
+
 	return ;
 }
 
 Character::Character(std::string name)
 {
 	std::cout
-		<< "Character string constructor called"
+		<< "Character string constructor called: "
+		<< name
 		<< std::endl;
-	this->_name = name;
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
+	this->_name = name;
 }
 
 Character::~Character(void)
 {
 	std::cout
-		<< "Character destructor called"
+		<< "Character destructor called: "
+		<< get_name()
 		<< std::endl;
 	for (int i = 0; i < 4; i++)
 	{
@@ -95,7 +99,7 @@ void	Character::equip(AMateria* m)
 		if (this->_inventory[i] == NULL)
 		{
 			this->_inventory[i] = m;
-			break ;
+			return ;
 		}
 	}
 	return ;

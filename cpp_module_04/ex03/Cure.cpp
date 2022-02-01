@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:51:35 by anolivei          #+#    #+#             */
-/*   Updated: 2022/01/30 15:51:57 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/01/31 23:25:33 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ Cure::~Cure(void)
 
 Cure& Cure::operator=(const Cure& obj)
 {
-	if (this != &obj)
-		this->_type = obj.get_type();
+	(void)obj;
 	return (*this);
 }
 
