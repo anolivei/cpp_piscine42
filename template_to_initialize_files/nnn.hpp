@@ -2,12 +2,13 @@
 #define nnn_HPP
 
 #include <iostream>
+
 class nnn
 {
 	public:
 		nnn(void);
 		nnn(const nnn& obj);
-		~nnn(void);
+		virtual ~nnn(void);
 
 		nnn&	operator=(const nnn& obj);
 
