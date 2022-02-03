@@ -27,6 +27,9 @@ class Bureaucrat
 		const std::string	get_name(void) const;
 		int					get_grade(void) const;
 
+		void				increment_grade(void);
+		void				decrement_grade(void);
+
 		class GradeTooHighException
 		{
 			public:

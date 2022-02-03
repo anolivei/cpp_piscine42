@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/03 03:29:15 by anolivei          #+#    #+#             */
+/*   Updated: 2022/02/03 03:39:53 by anolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void)
@@ -50,6 +62,40 @@ const std::string	Bureaucrat::get_name(void) const
 int	Bureaucrat::get_grade(void) const
 {
 	return (this->_grade);
+}
+
+void	Bureaucrat::increment_grade(void)
+{
+	this->_grade--;
+	try
+	{
+		if (this->_grade < 1)
+			throw Bureaucrat::GradeTooHighException();
+	}
+	catch(const std::exception& e)
+	{
+		this->_grade++;
+		std::cerr
+			<< e.grade_except()
+			<< std::endl;
+	}
+}
+
+void	Bureaucrat::decrement_grade(void)
+{
+	this->_grade++;
+	try
+	{
+		if (this->_grade < 1)
+			throw Bureaucrat::GradeTooLowException();
+	}
+	catch(const std::exception& e)
+	{
+		this->_grade--;
+		std::cerr
+			<< e.grade_except()
+			<< std::endl;
+	}
 }
 
 std::ostream&	operator<<(std::ostream& o, const Bureaucrat& i)
