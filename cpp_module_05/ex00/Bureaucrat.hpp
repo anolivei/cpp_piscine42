@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:45:07 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/02 00:58:27 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/02 23:48:44 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ class Bureaucrat
 		class GradeTooHighException
 		{
 			public:
-				const char* grade_except(void) const throw();
+				const char* what(void) const throw();
 		};
 
 		class GradeTooLowException
 		{
 			public:
-				const char* grade_except(void) const throw();
+				const char* what(void) const throw();
 		};
 
 	private:
