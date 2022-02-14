@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/02/14 00:03:44 by anolivei         ###   ########.fr        #
+#    Updated: 2022/02/14 00:44:52 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC =	./main.cpp \
 
 OBJS =	./main.o \
 		./Bureaucrat.o \
-		./Form.cpp
+		./Form.o
 
 CC	= c++
 
