@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 03:29:15 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/13 23:44:42 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:30:01 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,12 +117,12 @@ void	Bureaucrat::_check_low(void)
 	}
 }
 
-const char*	Bureaucrat::GradeTooHighException::what() const throw()
+const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade is too high...");
 }
 
-const char*	Bureaucrat::GradeTooLowException::what() const throw()
+const char*	Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade is too low...");
 }

@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 14:45:07 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/13 23:45:21 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:29:46 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ class Bureaucrat
 
 		class GradeTooHighException : public std::exception
 		{
-			virtual const char* what() const throw();
+			virtual const char* what(void) const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
-			virtual const char* what() const throw();
+			virtual const char* what(void) const throw();
 		};
 
 	private:
