@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/16 22:19:18 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/17 00:03:38 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int main(void)
 	std::cout << vasilia << std::endl;
 
 	vasilia.sign_form(form42);
+	std::cout << form42 << std::endl;
 
 	return (0);
 }
