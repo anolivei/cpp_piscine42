@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 03:29:15 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/13 23:44:42 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:53:42 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,29 @@ void	Bureaucrat::decrement_grade(void)
 {
 	this->_grade++;
 	this->_check_low();
+}
+
+void	Bureaucrat::sign_form(Form& form)
+{
+	try
+	{
+		form.be_signed(*this);
+		std::cout
+			<< get_name()
+			<< " signed "
+			<< form.get_name()
+			<< std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout
+			<< get_name()
+			<< " couldn't sign "
+			<< form.get_name()
+			<< " because "
+			<< e.what()
+			<< std::endl;
+	}
 }
 
 void	Bureaucrat::_check_high(void)

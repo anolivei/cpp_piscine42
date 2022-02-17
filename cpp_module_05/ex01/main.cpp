@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/13 23:41:39 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/16 22:19:18 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,57 @@
 
 int main(void) 
 {
-	std::cout << "----------------HEAP AND STACK----------------" << std::endl;
 
-	Bureaucrat pyotr;
-	Bureaucrat *vasilia = new Bureaucrat("Vasilia", 42);
-	Bureaucrat alyosha("Alyosha", 21);
+	std::cout << "---------CREATE BUREAUCRATS AND FORMS---------" << std::endl;
+
+	Bureaucrat	pyotr;
+	Bureaucrat	vasilia("Vasilia", 43);
+	Form		form42("42", 42, 42);
+	Form		form149("149", 149, 149);
+	Form		*form42_21 = new Form("42_21", 42, 21);
+
+	std::cout << "------------------DEEP COPY-------------------" << std::endl;
+
+	Form		*form42_21_copy = new Form(*form42_21);
+	delete form42_21;
+	std::cout << *form42_21_copy << std::endl;
+	delete form42_21_copy;
+
+	std::cout << "----------HIGHEST AND LOWEST GRADES-----------" << std::endl;
+
+	try
+	{
+		Form		form151_1("151_1", 151, 1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		Form		form151_0("151_0", 150, 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::cout << "-------------------SIGNING--------------------" << std::endl;
 
 	std::cout << pyotr << std::endl;
-	std::cout << *vasilia << std::endl;
-	std::cout << alyosha << std::endl;
+	std::cout << vasilia << std::endl;
 
-	std::cout << "-------------------COPY DEEP------------------" << std::endl;
+	pyotr.sign_form(form42);
+	pyotr.sign_form(form149);
 
-	Bureaucrat *vasilia_copy = new Bureaucrat(*vasilia);
+	vasilia.sign_form(form149);
+	vasilia.sign_form(form42);
 
-	std::cout << *vasilia_copy << std::endl;
-	delete vasilia;
-	std::cout << *vasilia_copy << std::endl;
-	delete vasilia_copy;
+	vasilia.increment_grade();
+	std::cout << vasilia << std::endl;
 
-	std::cout << "------------HIGHER AND LOWER GRADES-----------" << std::endl;
-
-	Bureaucrat morozko("Morozko", 0);
-	Bureaucrat dunyasha("Dunyasha", 151);
-
-	std::cout << "------------INCREMENT AND DECREMENT-----------" << std::endl;
-
-
-	std::cout << morozko << std::endl;
-	morozko.increment_grade();
-	std::cout << morozko << std::endl;
-
-	std::cout << dunyasha << std::endl;
-	dunyasha.decrement_grade();
-	std::cout << dunyasha << std::endl;
+	vasilia.sign_form(form42);
 
 	return (0);
 }

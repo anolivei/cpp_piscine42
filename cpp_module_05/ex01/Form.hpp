@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:15:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/14 23:48:38 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:46:40 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define FORM_HPP
 
 #include <iostream>
+#include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 	public:
@@ -30,7 +32,7 @@ class Form
 		int			get_grade_sign(void) const;
 		int			get_grade_execute(void) const;
 
-		void		set_signed_status(bool is_signed);
+		void		be_signed(Bureaucrat& bureaucrat);
 
 		class GradeTooHighException : public std::exception
 		{
