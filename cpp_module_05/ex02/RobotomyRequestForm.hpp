@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/16 23:30:47 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:56:49 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include "AForm.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public AForm
 {
 	public:
 		RobotomyRequestForm(void);
@@ -23,10 +24,6 @@ class RobotomyRequestForm
 		virtual ~RobotomyRequestForm(void);
 
 		RobotomyRequestForm&	operator=(const RobotomyRequestForm& obj);
-
-	private:
-
-	protected:
 };
 
 std::ostream&	operator<<(std::ostream& o, const RobotomyRequestForm& i);

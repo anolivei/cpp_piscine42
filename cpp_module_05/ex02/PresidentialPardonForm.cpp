@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:19 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/16 23:30:20 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/21 14:31:27 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 {
 	if (this != &obj)
 	{
-		this->XXX = obj.XXX();
+		this->_target = obj.get_target();
 	}
 	return (*this);
 }

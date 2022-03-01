@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:15:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/17 10:53:22 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:56:36 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class AForm
 		bool		get_signed_status(void) const;
 		int			get_grade_sign(void) const;
 		int			get_grade_execute(void) const;
+		std::string	get_target(void) const;
 
 		void		be_signed(Bureaucrat& bureaucrat);
 
@@ -52,6 +53,7 @@ class AForm
 		bool				_is_signed;
 		const int			_grade_sign;
 		const int			_grade_execute;
+		std::string			_target;
 		void				_check_grades(void);
 
 };
