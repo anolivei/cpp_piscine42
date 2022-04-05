@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 03:29:15 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/16 13:53:42 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/04/04 19:45:29 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	Bureaucrat::decrement_grade(void)
 	this->_check_low();
 }
 
-void	Bureaucrat::sign_form(Form& form)
+void	Bureaucrat::sign_form(AForm& form)
 {
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/17 10:50:35 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/04/04 19:44:45 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int main(void)
 
 	Bureaucrat	pyotr;
 	Bureaucrat	vasilia("Vasilia", 43);
-	Form		form42("42", 42, 42);
-	Form		form149("149", 149, 149);
-	Form		*form42_21 = new Form("42_21", 42, 21);
+	AForm		form42("42", 42, 42);
+	AForm		form149("149", 149, 149);
+	AForm		*form42_21 = new AForm("42_21", 42, 21);
 
 	std::cout << "------------------DEEP COPY-------------------" << std::endl;
 
-	Form		*form42_21_copy = new Form(*form42_21);
+	AForm		*form42_21_copy = new AForm(*form42_21);
 	delete form42_21;
 	std::cout << *form42_21_copy << std::endl;
 	delete form42_21_copy;
@@ -38,7 +38,7 @@ int main(void)
 
 	try
 	{
-		Form		form151_1("151_1", 151, 1);
+		AForm		form151_1("151_1", 151, 1);
 	}
 	catch(const std::exception& e)
 	{
@@ -47,7 +47,7 @@ int main(void)
 
 	try
 	{
-		Form		form151_0("151_0", 150, 0);
+		AForm		form151_0("151_0", 150, 0);
 	}
 	catch(const std::exception& e)
 	{
