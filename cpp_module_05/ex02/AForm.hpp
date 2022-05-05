@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:15:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/03/23 11:47:21 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/05 07:29:45 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class AForm
 		std::string	get_target(void) const;
 
 		void		be_signed(Bureaucrat& bureaucrat);
+		void		check_executor(const Bureaucrat& bureaucrat) const;
 
 	protected:
 		class GradeTooHighException : public std::exception
@@ -47,6 +48,10 @@ class AForm
 			virtual const char* what(void) const throw();
 		};
 
+		class NotSignedException : public std::exception
+		{
+			virtual const char* what(void) const throw();
+		};
 
 	private:
 		const std::string	_name;

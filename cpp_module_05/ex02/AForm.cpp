@@ -6,11 +6,15 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:16:26 by anolivei          #+#    #+#             */
-/*   Updated: 2022/03/23 11:42:14 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/05 07:29:50 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
+/*
+** Constructors and destructor
+*/
 
 AForm::AForm(void) :
 	_name("default"), _is_signed(false), _grade_sign(1), _grade_execute(1)
@@ -64,6 +68,10 @@ AForm::~AForm(void)
 	return ;
 }
 
+/*
+** Operator overloads
+*/
+
 AForm& AForm::operator=(const AForm& obj)
 {
 	if (this != &obj)
@@ -92,6 +100,10 @@ std::ostream&	operator<<(std::ostream& o, const AForm& i)
 	return o;
 }
 
+/*
+** Public methods
+*/
+
 std::string	AForm::get_name(void) const
 {
 	return (this->_name);
@@ -119,6 +131,23 @@ void	AForm::be_signed(Bureaucrat& bureaucrat)
 	_is_signed = true;
 }
 
+void AForm::check_executor(const Bureaucrat& bureaucrat) const
+{
+	if (get_signed_status() == false)
+		throw NotSignedException();
+	else if (bureaucrat.get_grade() > get_grade_execute())
+		throw GradeTooLowException();
+	std::cout
+		<< bureaucrat.get_name()
+		<< " executed "
+		<< get_name()
+		<< std::endl;
+}
+
+/*
+** Exceptions
+*/
+
 const char*	AForm::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade is too high...");
@@ -128,6 +157,15 @@ const char*	AForm::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade is too low...");
 }
+
+const char* AForm::NotSignedException::what(void) const throw()
+{
+	return ("Form is not signed...");
+}
+
+/*
+** Private methods
+*/
 
 void	AForm::_check_grades(void)
 {

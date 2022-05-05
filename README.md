@@ -4,7 +4,7 @@
 
 </div>
 
-<h1 align="center"> 🏊🏻‍♀️ CPP Piscine 💦</h1>
+<h1 align="center"> CPP Piscine </h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/anolivei/cpp_piscine42?color=2596be">
@@ -20,7 +20,7 @@
 
 
 <h4 align="center"> 
-	🚧  CPP Piscine 🏊🏻‍♀️ Under construction...  🚧
+CPP Piscine Under construction...
 </h4> 
 
 <hr>
