@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:25 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/21 15:57:08 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/14 16:49:14 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,23 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include <string>
 
 class PresidentialPardonForm : public AForm
 {
 	public:
 		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm& obj);
 		virtual ~PresidentialPardonForm(void);
 
 		PresidentialPardonForm&	operator=(const PresidentialPardonForm& obj);
+		
+		void	execute(const Bureaucrat& executor) const;
+		std::string	get_target(void) const;
+
+	private:
+		std::string	_target;
 };
 
 std::ostream&	operator<<(std::ostream& o, const PresidentialPardonForm& i);
