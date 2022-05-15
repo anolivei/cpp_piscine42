@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:16 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 13:16:18 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 18:20:26 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ RobotomyRequestForm::RobotomyRequestForm(void)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& obj)
+	: AForm(obj)
 {
 	std::cout
 		<< "RobotomyRequestForm copy constructor called"
@@ -93,7 +94,7 @@ void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	this->check_executor(executor);
 	std::cout
 		<< "ZZZZ ZUUM ZUUUM ZUUUM ZUUM ZZZZ ";
-	num = rand() % 2;
+	num = std::rand() % 2;
 	if (num == 0)
 		std::cout << "has been robotomized successfully" << std::endl;
 	else

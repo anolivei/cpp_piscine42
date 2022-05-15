@@ -6,7 +6,7 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 23:42:45 by anolivei          #+#    #+#              #
-#    Updated: 2022/04/04 19:42:58 by anolivei         ###   ########.fr        #
+#    Updated: 2022/05/15 18:18:57 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,17 @@ NAME = a.out
 
 SRC =	./main.cpp \
 		./Bureaucrat.cpp \
-		./AForm.cpp
+		./AForm.cpp \
+		./RobotomyRequestForm.cpp \
+		./ShrubberyCreationForm.cpp \
+		./PresidentialPardonForm.cpp
 
 OBJS =	./main.o \
 		./Bureaucrat.o \
-		./AForm.o
+		./AForm.o \
+		./RobotomyRequestForm.o \
+		./ShrubberyCreationForm.o \
+		./PresidentialPardonForm.o
 
 CC	= c++
 
@@ -41,7 +47,7 @@ clean:
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving objects\033[0m"
 
 fclean:		clean
-			@$(RM) $(NAME)
+			@$(RM) $(NAME) ./Gama_shrubbery
 			@echo "\033[0;32m[OK]\033[0m    \033[0;38;5;44mRemoving $(NAME)\033[0m"
 
 re:			fclean all

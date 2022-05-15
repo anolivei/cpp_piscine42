@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 14:32:29 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 18:21:19 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,4 @@ int main(void)
 	galileu.execute_form(gama);
 	rene.execute_form(gama);
 return (0);
-}
+} 

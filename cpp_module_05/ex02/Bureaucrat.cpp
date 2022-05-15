@@ -6,14 +6,18 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 03:29:15 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 14:23:08 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 18:21:53 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+/*
+** CONSTRUCTORS AND DESTRUCTOR
+*/
+
 Bureaucrat::Bureaucrat(void) :
-	_name("default"), _grade(1)
+	_name("default"), _grade(150)
 {
 	std::cout
 		<< "Bureaucrat: "
@@ -63,6 +67,10 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
+/*
+** GETTERS
+*/
+
 const std::string	Bureaucrat::get_name(void) const
 {
 	return (this->_name);
@@ -72,6 +80,10 @@ int	Bureaucrat::get_grade(void) const
 {
 	return (this->_grade);
 }
+
+/*
+** METHODS
+*/
 
 void	Bureaucrat::increment_grade(void)
 {
@@ -116,7 +128,13 @@ void Bureaucrat::execute_form(AForm& form)
 	}
 	catch(std::exception& e)
 	{
-		std::cerr << get_name() << " couldn't execute " << form.get_name() << " because " << e.what() << std::endl;
+		std::cerr 
+			<< get_name()
+			<< " couldn't execute "
+			<< form.get_name()
+			<< " because "
+			<< e.what()
+			<< std::endl;
 	}
 	
 }
@@ -162,6 +180,10 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low...");
 }
+
+/*
+** OPERATORS OVERLOADING
+*/
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& obj)
 {

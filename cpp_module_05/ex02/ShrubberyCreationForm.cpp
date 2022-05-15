@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:06 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/05 09:24:17 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 18:19:55 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj)
+	: AForm(obj)
 {
 	std::cout
 		<< "ShrubberyCreationForm copy constructor called"
@@ -91,17 +92,17 @@ void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 	std::ofstream	file;
 
 	this->check_executor(executor);
-	file.open(this->_target + "_shrubbery");
+	file.open((this->_target + "_shrubbery").c_str());
 	for (int i = 0; i < 3; i++)
 	{
 		file << "          &&& &&  & &&" << std::endl;
-		file << "      && &\/&\|& ()|/ @, &&" << std::endl;
-		file << "      &\/(/&/&||/& /_/)_&/_&" << std::endl;
-		file << "   &() &\/&|()|/&\/ '%' & ()" << std::endl;
-		file << "  &_\_&&_\ |& |&&/&__%_/_& &&" << std::endl;
+		file << "      && &\\/&\\|& ()|/ @, &&" << std::endl;
+		file << "      &\\/(/&/&||/& /_/)_&/_&" << std::endl;
+		file << "   &() &\\/&|()|/&\\/ '%' & ()" << std::endl;
+		file << "  &_\\_&&_\\ |& |&&/&__%_/_& &&" << std::endl;
 		file << "&&   && & &| &| /& & % ()& /&&" << std::endl;
-		file << " ()&_---()&\&\|&&-&&--%---()~" << std::endl;
-		file << "     &&     \|||" << std::endl;
+		file << " ()&_---()&\\&\\|&&-&&--%---()~" << std::endl;
+		file << "     &&     \\|||" << std::endl;
 		file << "             |||" << std::endl;
 		file << "             |||" << std::endl;
 		file << "             |||" << std::endl;

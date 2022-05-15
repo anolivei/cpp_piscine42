@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 12:56:37 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 15:39:40 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include <string>
+#include <cstdlib>
 
 class RobotomyRequestForm : public AForm
 {

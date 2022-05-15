@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:15:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 14:16:34 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 18:23:10 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include <string>
 
 class Bureaucrat;
 
@@ -32,7 +33,6 @@ class AForm
 		bool		get_signed_status(void) const;
 		int			get_grade_sign(void) const;
 		int			get_grade_execute(void) const;
-		std::string	get_target(void) const;
 
 		void		be_signed(Bureaucrat& bureaucrat);
 		void		check_executor(const Bureaucrat& bureaucrat) const;
@@ -59,7 +59,6 @@ class AForm
 		bool				_is_signed;
 		const int			_grade_sign;
 		const int			_grade_execute;
-		std::string			_target;
 		void				_check_grades(void);
 
 };
