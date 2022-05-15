@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:19 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/14 16:52:46 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 13:00:38 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 */
 
 PresidentialPardonForm::PresidentialPardonForm(void)
+	: AForm("PresidentialPardonForm", 25, 5), _target("defaut")
 {
 	std::cout
 		<< "PresidentialPardonForm default constructor called"
@@ -24,8 +25,8 @@ PresidentialPardonForm::PresidentialPardonForm(void)
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-	AForm("PresidentialPardonForm", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target)
+	: AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	std::cout
 		<< "PresidentialPardonForm"

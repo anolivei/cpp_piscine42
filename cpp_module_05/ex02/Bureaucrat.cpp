@@ -6,14 +6,14 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 03:29:15 by anolivei          #+#    #+#             */
-/*   Updated: 2022/04/04 19:45:29 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 14:23:08 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) :
-	_name("Pyotr"), _grade(1)
+	_name("default"), _grade(1)
 {
 	std::cout
 		<< "Bureaucrat: "
@@ -106,6 +106,19 @@ void	Bureaucrat::sign_form(AForm& form)
 			<< e.what()
 			<< std::endl;
 	}
+}
+
+void Bureaucrat::execute_form(AForm& form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << get_name() << " couldn't execute " << form.get_name() << " because " << e.what() << std::endl;
+	}
+	
 }
 
 void	Bureaucrat::_check_high(void)

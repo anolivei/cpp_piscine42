@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 23:29:00 by anolivei          #+#    #+#             */
-/*   Updated: 2022/04/04 19:44:45 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 14:32:29 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,57 +18,35 @@
 
 int main(void) 
 {
+	std::cout << "------------------BUREAUCRATS------------------" << std::endl;
+	Bureaucrat rene("René Descartes", 1);
+	Bureaucrat galileu("Galileu Galilei", 150);
 
-	std::cout << "---------CREATE BUREAUCRATS AND FORMS---------" << std::endl;
+	std::cout << "--------------PRESIDENTIAL PARDON--------------" << std::endl;
+	PresidentialPardonForm alfa("Alfa");
+	galileu.execute_form(alfa);
+	rene.sign_form(alfa);
+	galileu.sign_form(alfa);
+	rene.execute_form(alfa);
+	galileu.execute_form(alfa);
 
-	Bureaucrat	pyotr;
-	Bureaucrat	vasilia("Vasilia", 43);
-	AForm		form42("42", 42, 42);
-	AForm		form149("149", 149, 149);
-	AForm		*form42_21 = new AForm("42_21", 42, 21);
+	std::cout << "---------------ROBOTOMY REQUEST----------------" << std::endl;
+	RobotomyRequestForm beta("Beta");
+	rene.execute_form(beta);
+	galileu.sign_form(beta);
+	rene.sign_form(beta);
+	galileu.execute_form(beta);
+	rene.execute_form(beta);
+	rene.execute_form(beta);
+	rene.execute_form(beta);
+	rene.execute_form(beta);
 
-	std::cout << "------------------DEEP COPY-------------------" << std::endl;
-
-	AForm		*form42_21_copy = new AForm(*form42_21);
-	delete form42_21;
-	std::cout << *form42_21_copy << std::endl;
-	delete form42_21_copy;
-
-	std::cout << "----------HIGHEST AND LOWEST GRADES-----------" << std::endl;
-
-	try
-	{
-		AForm		form151_1("151_1", 151, 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	try
-	{
-		AForm		form151_0("151_0", 150, 0);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	std::cout << "-------------------SIGNING--------------------" << std::endl;
-
-	std::cout << pyotr << std::endl;
-	std::cout << vasilia << std::endl;
-
-	pyotr.sign_form(form42);
-	pyotr.sign_form(form149);
-
-	vasilia.sign_form(form149);
-	vasilia.sign_form(form42);
-
-	vasilia.increment_grade();
-	std::cout << vasilia << std::endl;
-
-	vasilia.sign_form(form42);
-
-	return (0);
+	std::cout << "--------------SHRUBBERY CREATION---------------" << std::endl;
+	ShrubberyCreationForm gama("Gama");
+	rene.execute_form(gama);
+	galileu.sign_form(gama);
+	rene.sign_form(gama);
+	galileu.execute_form(gama);
+	rene.execute_form(gama);
+return (0);
 }

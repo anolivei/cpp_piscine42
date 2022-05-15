@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:09 by anolivei          #+#    #+#             */
-/*   Updated: 2022/02/21 15:56:49 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 12:56:37 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,16 @@ class RobotomyRequestForm : public AForm
 	public:
 		RobotomyRequestForm(void);
 		RobotomyRequestForm(const RobotomyRequestForm& obj);
+		RobotomyRequestForm(std::string target);
 		virtual ~RobotomyRequestForm(void);
 
 		RobotomyRequestForm&	operator=(const RobotomyRequestForm& obj);
+
+		std::string				get_target(void) const;
+		void	execute(const Bureaucrat& executor) const;
+
+	private:
+		std::string				_target;
 };
 
 std::ostream&	operator<<(std::ostream& o, const RobotomyRequestForm& i);

@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 00:15:51 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/05 07:29:45 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/15 14:16:34 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class AForm
 
 		void		be_signed(Bureaucrat& bureaucrat);
 		void		check_executor(const Bureaucrat& bureaucrat) const;
+		virtual void	execute(const Bureaucrat& executor) const = 0;
 
 	protected:
 		class GradeTooHighException : public std::exception
