@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:16 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 18:20:26 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/16 19:57:36 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	: AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	std::cout
-		<< "RobotomyRequestForm"
+		<< "RobotomyRequestForm "
 		<< target
-		<< "constructor called"
+		<< " constructor called"
 		<< std::endl;
 	return ;
 }

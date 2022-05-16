@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:30:06 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/15 18:19:55 by anolivei         ###   ########.fr       */
+/*   Updated: 2022/05/16 19:57:45 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	: AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	std::cout
-		<< "ShrubberyCreationForm"
+		<< "ShrubberyCreationForm "
 		<< target
-		<< "constructor called"
+		<< " constructor called"
 		<< std::endl;
 	return ;
 }
