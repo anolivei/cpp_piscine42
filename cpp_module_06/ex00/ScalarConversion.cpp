@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Scalar.cpp                                         :+:      :+:    :+:   */
+/*   ScalarConversion.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:13 by anolivei          #+#    #+#             */
-/*   Updated: 2022/05/17 22:59:21 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:01:46 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Scalar.hpp"
+#include "ScalarConversion.hpp"
 
 Scalar::Scalar(void)
 {
@@ -43,11 +43,12 @@ Scalar& Scalar::operator=(const Scalar& obj)
 	//{
 	//	this->XXX = obj.XXX();
 	//}
+	std::cout << obj;
 	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream& o, const Scalar& i)
 {
-	o << "something";
+	o << i;
 	return o;
 }

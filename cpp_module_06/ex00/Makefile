@@ -6,17 +6,17 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 22:56:05 by anolivei          #+#    #+#              #
-#    Updated: 2022/09/07 18:25:11 by anolivei         ###   ########.fr        #
+#    Updated: 2023/03/02 15:59:03 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 
 SRC =	./main.cpp \
-		./Scalar.cpp
+		./ScalarConversion.cpp
 
 OBJS =	./main.o \
-		./Scalar.o
+		./ScalarConversion.o
 
 CC	= c++
 
