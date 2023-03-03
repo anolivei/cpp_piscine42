@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:23 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/03 11:31:44 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/03 16:22:42 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ScalarConversion
 			public:
 				virtual const char * what() const throw()
 				{
-					return ("The type conversion is impossible, it must be a char, a int, a float or a double");
+					return ("[ERROR] The type conversion is impossible, it must be a char, a int, a float or a double");
 				}
 		};
 
@@ -42,9 +42,13 @@ class ScalarConversion
 
 	private:
 		char *	_arg;
-		char *	_type;
+		std::string	_type;
 		
 		void	_checkType(void);
+		bool	_isChar(char *arg);
+		bool	_isInt(char *arg);
+		bool	_isFloat(char *arg);
+		bool	_isDouble(char *arg);
 
 	protected:
 

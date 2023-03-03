@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:56:50 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/03 11:27:31 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/03 16:17:42 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		std::cout
-			<< "Type one argument"
+			<< "[ERROR] Type one argument"
 			<< std::endl;
 		return (1);
 	}
