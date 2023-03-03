@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:56:50 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/02 16:00:52 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/03 11:27:31 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,16 @@ int main(int argc, char **argv)
 			<< std::endl;
 		return (1);
 	}
-	std::cout
-		<< argv[1]
-		<< std::endl;
+	try
+	{
+		ScalarConversion input(argv[1]);
+		std::cout
+			<< input
+			<< std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return (0);
 }
