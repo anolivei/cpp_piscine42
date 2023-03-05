@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:13 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/04 22:27:01 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/04 22:49:14 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,25 @@ ScalarConversion& ScalarConversion::operator=(const ScalarConversion& obj)
 	if (this != &obj)
 	{
 		this->_arg = obj._arg;
-		this->_type = obj._type;
+		this->type = obj.type;
 	}
 	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream& o, const ScalarConversion& i)
 {
-	o << "char: '" << i.valueChar << "'" << std::endl
-	<< "int: " << i.valueInt << std::endl
-	<< "float: " << i.valueFloat << "f" << std::endl
-	<< "double: " << i.valueDouble;
+	if (i.type != PSEUDO_LITERAL)
+	{
+		o << "char: '" << i.valueChar << "'" << std::endl
+		<< "int: " << i.valueInt << std::endl
+		<< "float: " << i.valueFloat << "f" << std::endl
+		<< "double: " << i.valueDouble;
+	}
+	else
+		o << "char: impossible" << std::endl
+		<< "int: impossible" << std::endl
+		<< "float: " << i.valuePseudoLiteral << "f" << std::endl
+		<< "double: " << i.valuePseudoLiteral;
 	return o;
 }
 
@@ -70,15 +78,15 @@ std::ostream&	operator<<(std::ostream& o, const ScalarConversion& i)
 void	ScalarConversion::_checkType(void)
 {
 	if (_isChar(this->_arg))
-		this->_type = CHAR;
+		this->type = CHAR;
 	else if (_isInt(this->_arg))
-		this->_type = INT;
+		this->type = INT;
 	else if (_isFloat(this->_arg))
-		this->_type = FLOAT;
+		this->type = FLOAT;
 	else if (_isDouble(this->_arg))
-		this->_type = DOUBLE;
+		this->type = DOUBLE;
 	else if (_isPseudoLiteral(this->_arg))
-		this->_type = PSEUDO_LITERAL;
+		this->type = PSEUDO_LITERAL;
 	else
 		throw ScalarConversion::ImpossibleTypeConversation();
 }
@@ -161,7 +169,6 @@ bool	ScalarConversion::_isPseudoLiteral(char *arg)
 	return (false);
 }
 
-
 /*
 ** Convert
 */
@@ -169,7 +176,7 @@ bool	ScalarConversion::_isPseudoLiteral(char *arg)
 void	ScalarConversion::_convert(void)
 {
 	std::cout << std::fixed << std::setprecision(1);
-	switch (this->_type)
+	switch (this->type)
 	{
 		case CHAR:
 			this->_charConvert();
@@ -225,5 +232,10 @@ void	ScalarConversion::_doubleConvert(void)
 
 void	ScalarConversion::_pseudoLiteralConvert(void) 
 {
-
+	this->valuePseudoLiteral = this->_arg;
+	int i = 0;
+	while (this->valuePseudoLiteral[i + 1])
+		i++;
+	if (this->valuePseudoLiteral[i] == 'f')
+		this->valuePseudoLiteral[i] = '\0';
 }

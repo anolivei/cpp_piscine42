@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:23 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/04 22:27:31 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/04 22:40:35 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,17 @@ class ScalarConversion
 				}
 		};
 
+		int		type;
 		char	valueChar;
 		int		valueInt;
 		float	valueFloat;
 		double	valueDouble;
+		char*	valuePseudoLiteral;
 		
 
 	private:
 		char *	_arg;
-		int		_type;
+		
 		
 		void	_checkType(void);
 		bool	_isChar(char *arg);
