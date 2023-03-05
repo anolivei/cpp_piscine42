@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:23 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/04 22:40:35 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/05 00:20:58 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <stdlib.h> //atoi, atof and strtod
 #include <iomanip> //setprecision
+#include <limits.h> //limit for int
+#include <float.h> //limit for fload and double
 
 #define CHAR			1
 #define INT				2
@@ -42,18 +44,19 @@ class ScalarConversion
 				}
 		};
 
+		std::string printChar(void);
+
 		int		type;
 		char	valueChar;
 		int		valueInt;
 		float	valueFloat;
 		double	valueDouble;
-		char*	valuePseudoLiteral;
+		std::string	valuePseudoLiteral;
 		
 
 	private:
 		char *	_arg;
-		
-		
+
 		void	_checkType(void);
 		bool	_isChar(char *arg);
 		bool	_isInt(char *arg);
@@ -67,6 +70,13 @@ class ScalarConversion
 		void	_floatConvert(void);
 		void	_doubleConvert(void);
 		void	_pseudoLiteralConvert(void);
+
+		void	_checkLimit(void);
+		bool	_charLimit;
+		bool	_intLimit;
+		bool	_floatLimit;
+		bool	_doubleLimit;
+		
 
 	protected:
 

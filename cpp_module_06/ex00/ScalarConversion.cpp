@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:13 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/04 22:49:14 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/05 00:21:31 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ ScalarConversion::ScalarConversion(void)
 ScalarConversion::ScalarConversion(char * arg) : _arg(arg)
 {
 	this->_checkType();
+	this->_checkLimit();
 	this->_convert();
 	return ;
 }
@@ -72,7 +73,7 @@ std::ostream&	operator<<(std::ostream& o, const ScalarConversion& i)
 }
 
 /*
-** Checking type
+** Check type
 */
 
 void	ScalarConversion::_checkType(void)
@@ -232,10 +233,51 @@ void	ScalarConversion::_doubleConvert(void)
 
 void	ScalarConversion::_pseudoLiteralConvert(void) 
 {
-	this->valuePseudoLiteral = this->_arg;
-	int i = 0;
-	while (this->valuePseudoLiteral[i + 1])
-		i++;
-	if (this->valuePseudoLiteral[i] == 'f')
-		this->valuePseudoLiteral[i] = '\0';
+	std::string  pseudoLit = this->_arg;
+	if (pseudoLit == "-inff" || pseudoLit == "+inff" || pseudoLit == "nanf")
+	{
+		pseudoLit = this->_arg;
+		int i = 0;
+		while (pseudoLit[i + 1])
+			i++;
+		pseudoLit[i] = '\0';
+		this->valuePseudoLiteral =  pseudoLit;
+	}
+	else
+		this->valuePseudoLiteral = this->_arg;
+}
+
+/*
+** Check limits
+*/
+
+void	ScalarConversion::_checkLimit(void)
+{
+	this->_charLimit = false;
+	this->_intLimit = false;
+	this->_floatLimit = false;
+	this->_doubleLimit = false;
+	double value = strtod(this->_arg, NULL);
+	if (value < 0 || value > 127)
+		this->_charLimit = true;
+	if (value < INT_MIN || value > INT_MAX)
+		this->_intLimit = true;
+	if (value < -FLT_MAX|| value > FLT_MAX)
+		this->_floatLimit = true;
+	if (value < -DBL_MAX || value > DBL_MAX)
+		this->_doubleLimit = true;
+} 
+
+/*
+** Print values
+*/
+
+std::string ScalarConversion::printChar(void)
+{
+	if ((this->valueInt >= 0 && this->valueInt < 33) || this->valueInt == 127)
+		return ("Non displayable");
+	else if (this->valueInt < 0 || this->valueInt > 127)
+		return ("impossible");
+	else
+		return ("lala");
 }
