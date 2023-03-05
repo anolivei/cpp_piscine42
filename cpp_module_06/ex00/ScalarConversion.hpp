@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:23 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/03 16:22:42 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/04 22:27:31 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #define SCALAR_CONVERSION_HPP
 
 #include <iostream>
+#include <stdlib.h> //atoi, atof and strtod
+#include <iomanip> //setprecision
+
+#define CHAR			1
+#define INT				2
+#define FLOAT			3
+#define DOUBLE			4
+#define PSEUDO_LITERAL	5
 
 class ScalarConversion
 {
@@ -30,7 +38,7 @@ class ScalarConversion
 			public:
 				virtual const char * what() const throw()
 				{
-					return ("[ERROR] The type conversion is impossible, it must be a char, a int, a float or a double");
+					return ("[ERROR] The type conversion is impossible, it must be a char, an int, a float or a double");
 				}
 		};
 
@@ -42,13 +50,21 @@ class ScalarConversion
 
 	private:
 		char *	_arg;
-		std::string	_type;
+		int		_type;
 		
 		void	_checkType(void);
 		bool	_isChar(char *arg);
 		bool	_isInt(char *arg);
 		bool	_isFloat(char *arg);
 		bool	_isDouble(char *arg);
+		bool	_isPseudoLiteral(char *arg);
+
+		void	_convert(void);
+		void	_charConvert(void);
+		void	_intConvert(void);
+		void	_floatConvert(void);
+		void	_doubleConvert(void);
+		void	_pseudoLiteralConvert(void);
 
 	protected:
 
