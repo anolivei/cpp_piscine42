@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:13 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/05 00:21:31 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:05:02 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ ScalarConversion::ScalarConversion(void)
 
 ScalarConversion::ScalarConversion(char * arg) : _arg(arg)
 {
+	this->output = arg;
 	this->_checkType();
 	this->_checkLimit();
 	this->_convert();
+	this->_printValues();
 	return ;
 }
 
@@ -39,9 +41,6 @@ ScalarConversion::ScalarConversion(const ScalarConversion& obj)
 
 ScalarConversion::~ScalarConversion(void)
 {
-	std::cout
-		<< "ScalarConversion destructor called"
-		<< std::endl;
 	return ;
 }
 
@@ -50,44 +49,33 @@ ScalarConversion& ScalarConversion::operator=(const ScalarConversion& obj)
 	if (this != &obj)
 	{
 		this->_arg = obj._arg;
-		this->type = obj.type;
+		this->_type = obj._type;
 	}
 	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream& o, const ScalarConversion& i)
 {
-	if (i.type != PSEUDO_LITERAL)
-	{
-		o << "char: '" << i.valueChar << "'" << std::endl
-		<< "int: " << i.valueInt << std::endl
-		<< "float: " << i.valueFloat << "f" << std::endl
-		<< "double: " << i.valueDouble;
-	}
-	else
-		o << "char: impossible" << std::endl
-		<< "int: impossible" << std::endl
-		<< "float: " << i.valuePseudoLiteral << "f" << std::endl
-		<< "double: " << i.valuePseudoLiteral;
+	o << i.output;
 	return o;
 }
 
 /*
-** Check type
+** Check Type
 */
 
 void	ScalarConversion::_checkType(void)
 {
 	if (_isChar(this->_arg))
-		this->type = CHAR;
+		this->_type = CHAR;
 	else if (_isInt(this->_arg))
-		this->type = INT;
+		this->_type = INT;
 	else if (_isFloat(this->_arg))
-		this->type = FLOAT;
+		this->_type = FLOAT;
 	else if (_isDouble(this->_arg))
-		this->type = DOUBLE;
+		this->_type = DOUBLE;
 	else if (_isPseudoLiteral(this->_arg))
-		this->type = PSEUDO_LITERAL;
+		this->_type = PSEUDO_LITERAL;
 	else
 		throw ScalarConversion::ImpossibleTypeConversation();
 }
@@ -171,13 +159,34 @@ bool	ScalarConversion::_isPseudoLiteral(char *arg)
 }
 
 /*
+** Check limits
+*/
+
+void	ScalarConversion::_checkLimit(void)
+{
+	this->_charLimit = false;
+	this->_intLimit = false;
+	this->_floatLimit = false;
+	this->_doubleLimit = false;
+	double value = strtod(this->_arg, NULL);
+	if (value < 0 || value > 127)
+		this->_charLimit = true;
+	if (value < INT_MIN || value > INT_MAX)
+		this->_intLimit = true;
+	if (value < -FLT_MAX|| value > FLT_MAX)
+		this->_floatLimit = true;
+	if (value < -DBL_MAX || value > DBL_MAX)
+		this->_doubleLimit = true;
+} 
+
+/*
 ** Convert
 */
 
 void	ScalarConversion::_convert(void)
 {
 	std::cout << std::fixed << std::setprecision(1);
-	switch (this->type)
+	switch (this->_type)
 	{
 		case CHAR:
 			this->_charConvert();
@@ -201,34 +210,34 @@ void	ScalarConversion::_convert(void)
 
 void	ScalarConversion::_charConvert(void) 
 {
-	this->valueChar = this->_arg[0];
-	this->valueInt = static_cast<int>(this->valueChar);
-	this->valueFloat = static_cast<float>(this->valueChar);
-	this->valueDouble = static_cast<double>(this->valueChar);
+	this->_valueChar = this->_arg[0];
+	this->_valueInt = static_cast<int>(this->_valueChar);
+	this->_valueFloat = static_cast<float>(this->_valueChar);
+	this->_valueDouble = static_cast<double>(this->_valueChar);
 }
 
 void	ScalarConversion::_intConvert(void) 
 {
-	this->valueInt = atoi(this->_arg);
-	this->valueChar = static_cast<char>(this->valueInt);
-	this->valueFloat = static_cast<float>(this->valueInt);
-	this->valueDouble = static_cast<double>(this->valueInt);
+	this->_valueInt = atoi(this->_arg);
+	this->_valueChar = static_cast<char>(this->_valueInt);
+	this->_valueFloat = static_cast<float>(this->_valueInt);
+	this->_valueDouble = static_cast<double>(this->_valueInt);
 }
 
 void	ScalarConversion::_floatConvert(void) 
 {
-	this->valueFloat = atof(this->_arg);
-	this->valueChar = static_cast<char>(this->valueFloat);
-	this->valueInt = static_cast<int>(this->valueFloat);
-	this->valueDouble = static_cast<double>(this->valueFloat);
+	this->_valueFloat = atof(this->_arg);
+	this->_valueChar = static_cast<char>(this->_valueFloat);
+	this->_valueInt = static_cast<int>(this->_valueFloat);
+	this->_valueDouble = static_cast<double>(this->_valueFloat);
 }
 
 void	ScalarConversion::_doubleConvert(void) 
 {
-	this->valueDouble = strtod(this->_arg, NULL);
-	this->valueChar = static_cast<char>(this->valueDouble);
-	this->valueInt = static_cast<int>(this->valueDouble);
-	this->valueFloat = static_cast<float>(this->valueDouble);
+	this->_valueDouble = strtod(this->_arg, NULL);
+	this->_valueChar = static_cast<char>(this->_valueDouble);
+	this->_valueInt = static_cast<int>(this->_valueDouble);
+	this->_valueFloat = static_cast<float>(this->_valueDouble);
 }
 
 void	ScalarConversion::_pseudoLiteralConvert(void) 
@@ -241,43 +250,68 @@ void	ScalarConversion::_pseudoLiteralConvert(void)
 		while (pseudoLit[i + 1])
 			i++;
 		pseudoLit[i] = '\0';
-		this->valuePseudoLiteral =  pseudoLit;
+		this->_valuePseudoLiteral =  pseudoLit;
 	}
 	else
-		this->valuePseudoLiteral = this->_arg;
+		this->_valuePseudoLiteral = this->_arg;
 }
-
-/*
-** Check limits
-*/
-
-void	ScalarConversion::_checkLimit(void)
-{
-	this->_charLimit = false;
-	this->_intLimit = false;
-	this->_floatLimit = false;
-	this->_doubleLimit = false;
-	double value = strtod(this->_arg, NULL);
-	if (value < 0 || value > 127)
-		this->_charLimit = true;
-	if (value < INT_MIN || value > INT_MAX)
-		this->_intLimit = true;
-	if (value < -FLT_MAX|| value > FLT_MAX)
-		this->_floatLimit = true;
-	if (value < -DBL_MAX || value > DBL_MAX)
-		this->_doubleLimit = true;
-} 
 
 /*
 ** Print values
 */
 
-std::string ScalarConversion::printChar(void)
+void ScalarConversion::_printValues(void)
 {
-	if ((this->valueInt >= 0 && this->valueInt < 33) || this->valueInt == 127)
-		return ("Non displayable");
-	else if (this->valueInt < 0 || this->valueInt > 127)
-		return ("impossible");
+	if (this->_type == PSEUDO_LITERAL)
+		this->_printPseudoLiteral();
+	else {
+		this->_printChar();
+		this->_printInt();
+		this->_printFloat();
+		this->_printDouble();
+	}
+}
+
+void ScalarConversion::_printPseudoLiteral(void)
+{
+	std::cout
+		<< "char: impossible" << std::endl
+		<< "int: impossible" << std::endl
+		<< "float: " << this->_valuePseudoLiteral << "f" << std::endl
+		<< "double: " << this->_valuePseudoLiteral << std::endl;
+}
+
+void ScalarConversion::_printChar(void)
+{
+	if ((this->_valueInt >= 0 && this->_valueInt < 33) || this->_valueInt == 127)
+		std::cout << "char: Non displayable" << std::endl;
+	else if (this->_charLimit == true)
+		std::cout << "char: impossible" << std::endl;
 	else
-		return ("lala");
+		std::cout << "char: '" << this->_valueChar << "'" << std::endl;
+}
+
+void ScalarConversion::_printInt(void)
+{
+	if (this->_intLimit || this->_floatLimit || this->_doubleLimit)
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << this->_valueInt << std::endl;;
+}
+
+void ScalarConversion::_printFloat(void) {
+	if ((this->_intLimit && this->_type == INT) ||
+		this->_floatLimit || this->_doubleLimit)
+		std::cout << "float: impossible" << std::endl;
+	else
+		std::cout << "float: " << this->_valueFloat << "f" << std::endl;;
+}
+
+void ScalarConversion::_printDouble(void) {
+	if ((this->_intLimit && this->_type == INT) ||
+		(this->_floatLimit && this->_type == FLOAT) ||
+		this->_doubleLimit)
+		std::cout << "double: impossible" << std::endl;
+	else
+		std::cout << "double: " << this->_valueDouble << std::endl;;
 }

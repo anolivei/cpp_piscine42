@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 22:58:23 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/05 00:20:58 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:06:15 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdlib.h> //atoi, atof and strtod
 #include <iomanip> //setprecision
 #include <limits.h> //limit for int
-#include <float.h> //limit for fload and double
+#include <float.h> //limit for float and double
 
 #define CHAR			1
 #define INT				2
@@ -35,6 +35,9 @@ class ScalarConversion
 
 		ScalarConversion&	operator=(const ScalarConversion& obj);
 
+		std::string output;
+
+	protected:
 		class ImpossibleTypeConversation : public std::exception
 		{
 			public:
@@ -44,18 +47,20 @@ class ScalarConversion
 				}
 		};
 
-		std::string printChar(void);
-
-		int		type;
-		char	valueChar;
-		int		valueInt;
-		float	valueFloat;
-		double	valueDouble;
-		std::string	valuePseudoLiteral;
-		
-
 	private:
-		char *	_arg;
+		char *		_arg;
+		int			_type;
+
+		char		_valueChar;
+		int			_valueInt;
+		float		_valueFloat;
+		double		_valueDouble;
+		std::string	_valuePseudoLiteral;
+
+		bool		_charLimit;
+		bool		_intLimit;
+		bool		_floatLimit;
+		bool		_doubleLimit;
 
 		void	_checkType(void);
 		bool	_isChar(char *arg);
@@ -72,14 +77,13 @@ class ScalarConversion
 		void	_pseudoLiteralConvert(void);
 
 		void	_checkLimit(void);
-		bool	_charLimit;
-		bool	_intLimit;
-		bool	_floatLimit;
-		bool	_doubleLimit;
-		
 
-	protected:
-
+		void	_printValues(void);
+		void	_printPseudoLiteral(void);
+		void	_printChar(void);
+		void	_printInt(void);
+		void	_printFloat(void);
+		void	_printDouble(void);
 };
 
 std::ostream&	operator<<(std::ostream& o, const ScalarConversion& i);
