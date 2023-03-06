@@ -6,15 +6,17 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/05 23:10:14 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/05 23:12:10 by anolivei         ###   ########.fr        #
+#    Updated: 2023/03/06 14:31:56 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = serialization
 
-SRC =	./main.cpp
+SRC =	./main.cpp \
+		./serialization.cpp
 
-OBJS =	./main.o
+OBJS =	./main.o \
+		./serialization.o
 
 CC	= c++
 
