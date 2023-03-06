@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:15:05 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/06 17:15:10 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:54:59 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,9 @@ void identify(Base& p)
 	std::cout << YELLOW << "Identifying Class by Reference" << RESET << std::endl;
 	try 
 	{
-		dynamic_cast<A&>(p);
+		A& a = dynamic_cast<A&>(p);
 		std::cout << GREEN << "A" << RESET << std::endl;
+		(void)a;
 	}
 	catch (std::exception &e)
 	{
@@ -79,8 +80,9 @@ void identify(Base& p)
 	}
 	try 
 	{
-		dynamic_cast<B&>(p);
+		B& b = dynamic_cast<B&>(p);
 		std::cout << GREEN << "B" << RESET << std::endl;
+		(void)b;
 	}
 	catch (std::exception &e)
 	{
@@ -88,8 +90,9 @@ void identify(Base& p)
 	}
 	try 
 	{
-		dynamic_cast<C&>(p);
+		C& c = dynamic_cast<C&>(p);
 		std::cout << GREEN << "C" << RESET << std::endl;
+		(void)c;
 	}
 	catch (std::exception &e)
 	{
