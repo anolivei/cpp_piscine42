@@ -6,15 +6,17 @@
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 22:21:58 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/06 22:26:45 by anolivei         ###   ########.fr        #
+#    Updated: 2023/03/06 23:09:25 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = functions
 
-SRC =	./main.cpp
+SRC =	./main.cpp \
+		./Awesome.cpp
 
-OBJS =	./main.o
+OBJS =	./main.o \
+		./Awesome.o
 
 CC	= c++
 

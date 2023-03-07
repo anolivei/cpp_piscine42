@@ -6,12 +6,13 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:36:14 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/06 22:53:36 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/06 23:12:12 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "template.hpp"
+#include "Awesome.hpp"
 
 int main( void ) {
 
@@ -58,4 +59,15 @@ int main( void ) {
 	std::cout << "float1 = " << float1 << ", float2 = " << float2 << std::endl;
 	std::cout << "min(float1, float2) = " << ::min(float1, float2) << std::endl;
 	std::cout << "max(float1, float2) = " << ::max(float1, float2) << std::endl;
+
+	std::cout << "\n---- classes ----\n" << std::endl;
+	Awesome awesome1(42);
+	Awesome awesome2(21);
+	std::cout << "before swap:" << std::endl;
+	std::cout << "awesome1 = " << awesome1 << ", awesome2 = " << awesome2 << std::endl;
+	swap(awesome1, awesome2);
+	std::cout << "after swap:" << std::endl;
+	std::cout << "awesome1 = " << awesome1 << ", awesome2 = " << awesome2 << std::endl;
+	std::cout << "min(awesome1, awesome2) = " << min(awesome1, awesome2) << std::endl;
+	std::cout << "max(awesome1, awesome2) = " << max(awesome1, awesome2) << std::endl;
 }
