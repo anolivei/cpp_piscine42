@@ -5,18 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/06 22:22:14 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/08 22:56:57 by anolivei         ###   ########.fr        #
+#    Created: 2023/03/08 21:57:09 by anolivei          #+#    #+#              #
+#    Updated: 2023/03/08 21:57:23 by anolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = easyfind
 
-SRC =	./main.cpp \
-		./Awesome.cpp
+SRC =	./main.cpp
 
-OBJS =	./main.o \
-		./Awesome.o
+OBJS =	./main.o
 
 CC	= c++
 
