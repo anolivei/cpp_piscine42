@@ -6,12 +6,12 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 21:13:34 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/10 23:02:47 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/11 13:21:42 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
-#define MUANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
 #include <stack>
 #include <deque>
