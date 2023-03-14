@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:46:10 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/14 16:10:30 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:43:48 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ void	RPN::reversePolishNotation(const std::string &expr)
 		{
 			if (_stack.size() < 2)
 				throw insufficientOperands();
-			int op2 = _stack.top();
+			int num2 = _stack.top();
 			_stack.pop();
-			int op1 = _stack.top();
+			int num1 = _stack.top();
 			_stack.pop();
-			calculate(op1, op2, c);
+			calculate(num1, num2, c);
 		}
 		else
 			throw invalidToken();
@@ -80,23 +80,23 @@ bool	RPN::isOperator(char c)
 	return (false);
 }
 
-void	RPN::calculate(int op1, int op2, char c)
+void	RPN::calculate(int num1, int num2, char op)
 {
-	switch (c)
+	switch (op)
 	{
 		case '+':
-			_stack.push(op1 + op2);
+			_stack.push(num1 + num2);
 			break;
 		case '-':
-			_stack.push(op1 - op2);
+			_stack.push(num1 - num2);
 			break;
 		case '*':
-			_stack.push(op1 * op2);
+			_stack.push(num1 * num2);
 			break;
 		case '/':
-			if (op2 == 0)
+			if (num2 == 0)
 				throw divisionByZero();
-			_stack.push(op1 / op2);
+			_stack.push(num1 / num2);
 			break;
 	}
 }

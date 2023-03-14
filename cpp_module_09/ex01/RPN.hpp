@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:46:16 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/14 16:07:07 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:43:53 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class RPN
 
 		void	reversePolishNotation(const std::string &expr);
 		bool	isOperator(char c);
-		void	calculate(int op1, int op2, char c);
+		void	calculate(int num1, int num2, char op);
 
 		int		getResult(void) const;
 
