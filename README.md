@@ -43,7 +43,7 @@ CPP Piscine is a project from 42 school to help students learn C++ and object-or
 
 There are nine modules and the topics covered by each module are:
 
-|     Module    |                                                 Topics Covered                                                |
+|     Modules    |                                                 Topics Covered                                                |
 | --------------| ------------------------------------------------------------------------------------------------------------- |
 | Module 00 | Namespace, class, member functions, stdio stream, initialization lists, static, const, and lots of basic stuf |
 | Module 01 | Memory allocation, references, pointers to members, switch | |
@@ -75,15 +75,15 @@ Before starting, you need to have [Git](https://git-scm.com) installed.
 
 ```bash
 # Clone this project
-$ git clone https://github.com/anolivei/cpp_piscine42
+git clone https://github.com/anolivei/cpp_piscine42
 
 # Access
-$ cd cpp_piscine42/cpp_module_XX/exXX
+cd cpp_piscine42/cpp_module_XX/exXX
 
 # Compile
 make
 
-# run the executable
+# Run the executable
 ./executable
 ```
 
