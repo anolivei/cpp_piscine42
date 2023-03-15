@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:45:58 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 15:55:33 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:25:51 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 int main(int argc, char **argv)
 {
+	if (argc < 2)
+	{
+		std::cerr << "[Error]: no sequence provided" << std::endl;
+		return (1);
+	}
 	try
 	{
 		PmergeMe input(argc, argv);
