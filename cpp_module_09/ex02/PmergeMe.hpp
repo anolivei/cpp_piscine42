@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:00 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 14:16:06 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:40:23 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 #define PMERGEME_HPP
 
 #include <iostream>
+#include <stdlib.h> //atoi
+#include <time.h> //clock
+#include <iomanip> //setprecision
 #include <vector>
-#include <list>
-#include <stdlib.h> 
+#include <deque>
 
 class PmergeMe
 {
@@ -28,21 +30,19 @@ class PmergeMe
 
 		PmergeMe&	operator=(const PmergeMe& obj);
 
-		unsigned int*	getBefore(void) const;
-		unsigned int*	getAfter(void) const;
-		unsigned int	getSize(void) const;
-
 	private:
+		int					_size;
 		bool				_sorted;
 		std::vector<int>	_vector;
-		std::list<int>		_list;
-		double				vectorDuration;
-		double				istDuration;
-		unsigned int		_size;
+		std::deque<int>		_deque;
+		double				_deltaTimeVector;
+		double				_deltaTimeDeque;
 
 		std::vector<int>	_parseArgsVector(int argc, char **argv);
-		std::list<int>		_parseArgsList(int argc, char **argv);
-		void				_print(void);
+		std::deque<int>		_parseArgsDeque(int argc, char **argv);
+		void				_printBeforeAfter(void);
+		void				_insertionSortVector(void);
+		void				_insertionSortDeque(void);
 
 	protected:
 
