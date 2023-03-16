@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:05 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 22:17:51 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:29:51 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,23 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& obj)
 
 std::ostream&	operator<<(std::ostream& o, const PmergeMe& i)
 {
-	o << "";
-	(void)i;
+	o 
+		<< "Vector delta time: " << i.getVectorDeltaTime() << std::endl
+		<< "Deque delta time: " << i.getDequeDeltaTime();
 	return o;
+}
+
+/*
+** Getters
+*/
+
+double	PmergeMe::getVectorDeltaTime(void) const
+{
+	return (this->_deltaTimeVector);
+}
+double	PmergeMe::getDequeDeltaTime(void) const
+{
+	return (this->_deltaTimeDeque);
 }
 
 /*

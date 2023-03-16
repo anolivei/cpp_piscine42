@@ -6,11 +6,12 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 13:45:58 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 19:25:51 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:35:38 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <iostream>
 
 int main(int argc, char **argv)
 {

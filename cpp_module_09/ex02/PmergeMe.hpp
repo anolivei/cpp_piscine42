@@ -6,21 +6,20 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:00 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 22:14:34 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:35:16 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
-#include <iostream>
+#include <iostream> //cout
 #include <stdlib.h> //atoi
-#include <time.h> //clock
 #include <iomanip> //setprecision
-#include <vector>
-#include <deque>
-#include <set>
 #include <sys/time.h> //gettimeofday
+#include <vector> //to sort
+#include <deque> //to sort
+#include <set> //to verify duplicates
 
 class PmergeMe
 {
@@ -29,6 +28,9 @@ class PmergeMe
 		PmergeMe(int argc, char **argv);
 		PmergeMe(const PmergeMe& obj);
 		virtual ~PmergeMe(void);
+
+		double	getVectorDeltaTime(void) const;
+		double	getDequeDeltaTime(void) const;
 
 		PmergeMe&	operator=(const PmergeMe& obj);
 
@@ -50,8 +52,8 @@ class PmergeMe
 		void				_insertionSortVector(void);
 		void				_insertionSortDeque(void);
 	
-		double			_getTime(void);
-		double			_deltaTime(long long time);
+		double				_getTime(void);
+		double				_deltaTime(long long time);
 
 	protected:
 
