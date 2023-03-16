@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:05 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 22:29:51 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/16 13:23:40 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ PmergeMe::PmergeMe(int argc, char **argv) : _size(argc - 1), _sorted(false)
 
 	_printBeforeAfter();
 
-	_insertionSortVector();
-	_insertionSortDeque();
+	_deltaTimeDeque = _mergeInsertSort(_deque);
+	_deltaTimeVector = _mergeInsertSort(_vector);
 
 	_sorted = true;
 	_printBeforeAfter();
@@ -129,36 +129,62 @@ void PmergeMe::_verifyDuplicates(void)
 ** Sort
 */
 
-void	PmergeMe::_insertionSortVector(void)
+template <typename T>
+double	PmergeMe::_mergeInsertSort(T& container)
 {
 	double tBegin = _getTime();
-	std::vector<int>::iterator i, j;
-	for (i = _vector.begin(); i != _vector.end(); ++i)
+	const int threshold = 16;
+	const int size = container.size();
+	if (size < 2)
+		return (_deltaTime(tBegin));
+	if (size < threshold)
 	{
-		std::vector<int>::value_type tmp = *i;
-		for (j = i; j != _vector.begin() && tmp < *(j - 1); --j)
+		for (typename T::iterator i = container.begin(); i != container.end(); ++i)
 		{
-			*j = *(j - 1);
+			typename T::iterator j = i;
+			while (j != container.begin() && *(j - 1) > *j)
+			{
+				std::swap(*j, *(j - 1));
+				--j;
+			}
 		}
-		*j = tmp;
+		return (_deltaTime(tBegin));
 	}
-	_deltaTimeVector = _deltaTime(tBegin);
-}
-
-void	PmergeMe::_insertionSortDeque(void)
-{
-	double tBegin = _getTime();
-	std::deque<int>::iterator i, j;
-	for (i = _deque.begin(); i != _deque.end(); ++i)
+	typename T::iterator middle = container.begin() + size / 2;
+	T left(container.begin(), middle);
+	T right(middle, container.end());
+	_mergeInsertSort(left);
+	_mergeInsertSort(right);
+	typename T::iterator i = left.begin();
+	typename T::iterator j = right.begin();
+	typename T::iterator k = container.begin();
+	while (i != left.end() && j != right.end())
 	{
-		std::deque<int>::value_type tmp = *i;
-		for (j = i; j != _deque.begin() && tmp < *(j - 1); --j)
+		if (*i < *j)
 		{
-			*j = *(j - 1);
+			*k = *i;
+			++i;
 		}
-		*j = tmp;
+		else
+		{
+			*k = *j;
+			++j;
+		}
+		++k;
 	}
-	_deltaTimeDeque = _deltaTime(tBegin);
+	while (i != left.end())
+	{
+		*k = *i;
+		++i;
+		++k;
+	}
+	while (j != right.end())
+	{
+		*k = *j;
+		++j;
+		++k;
+	}
+	return (_deltaTime(tBegin));
 }
 
 /*
@@ -212,5 +238,5 @@ void	PmergeMe::_printTime(std::string vectorDeque) const
 	std::cout 
 		<< "Time to process a range of " << _size 
 		<< " elements with std::" << vectorDeque << ": "
-		<< std::fixed << std::setprecision(5) << delta << " us" << std::endl;
+		<< std::fixed << std::setprecision(5) << delta << " ms" << std::endl;
 }
