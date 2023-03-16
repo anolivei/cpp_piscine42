@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:05 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/15 22:14:40 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:17:51 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void PmergeMe::_verifyDuplicates(void)
 
 void	PmergeMe::_insertionSortVector(void)
 {
-	long long tBegin = _getTime();
+	double tBegin = _getTime();
 	std::vector<int>::iterator i, j;
 	for (i = _vector.begin(); i != _vector.end(); ++i)
 	{
@@ -133,7 +133,7 @@ void	PmergeMe::_insertionSortVector(void)
 
 void	PmergeMe::_insertionSortDeque(void)
 {
-	long long tBegin = _getTime();
+	double tBegin = _getTime();
 	std::deque<int>::iterator i, j;
 	for (i = _deque.begin(); i != _deque.end(); ++i)
 	{
