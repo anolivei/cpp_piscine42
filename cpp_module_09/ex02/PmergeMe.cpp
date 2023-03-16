@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:05 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/16 13:23:40 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/16 13:45:31 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ PmergeMe::PmergeMe(int argc, char **argv) : _size(argc - 1), _sorted(false)
 
 	_printBeforeAfter();
 
-	_deltaTimeDeque = _mergeInsertSort(_deque);
 	_deltaTimeVector = _mergeInsertSort(_vector);
+	_deltaTimeDeque = _mergeInsertSort(_deque);
 
 	_sorted = true;
 	_printBeforeAfter();
