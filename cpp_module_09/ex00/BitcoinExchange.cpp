@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:49:14 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/16 23:54:37 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/17 00:01:14 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ float BitcoinExchange::getExchangeRate(const std::string& date, float value) con
 			throw invalidArgument();
 		--it;
 	}
-	return it->second;
+	return (it->second);
 }
 
 
