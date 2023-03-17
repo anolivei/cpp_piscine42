@@ -15,4 +15,6 @@ make re;
 ./PmergeMe 3 2 1
 
 ./PmergeMe `shuf -i 1-3001 -n 3000 | tr "\n" " "`
-./PmergeMe `shuf -i 1-10001 -n 10000 | tr "\n" " "`
+#./PmergeMe `shuf -i 1-10001 -n 10000 | tr "\n" " "`
+
+make fclean

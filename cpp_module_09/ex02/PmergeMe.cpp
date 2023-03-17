@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:05 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/16 13:45:31 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:30:59 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ PmergeMe::PmergeMe(int argc, char **argv) : _size(argc - 1), _sorted(false)
 
 	_printBeforeAfter();
 
-	_deltaTimeVector = _mergeInsertSort(_vector);
-	_deltaTimeDeque = _mergeInsertSort(_deque);
+	double tBegin = _getTime();
+	_mergeInsertSort(_vector);
+	_deltaTimeVector = _deltaTime(tBegin);
+
+	tBegin = _getTime();
+	_mergeInsertSort(_deque);
+	_deltaTimeDeque = _deltaTime(tBegin);
 
 	_sorted = true;
 	_printBeforeAfter();
@@ -130,13 +135,12 @@ void PmergeMe::_verifyDuplicates(void)
 */
 
 template <typename T>
-double	PmergeMe::_mergeInsertSort(T& container)
+void	PmergeMe::_mergeInsertSort(T& container)
 {
-	double tBegin = _getTime();
 	const int threshold = 16;
 	const int size = container.size();
 	if (size < 2)
-		return (_deltaTime(tBegin));
+		return ;
 	if (size < threshold)
 	{
 		for (typename T::iterator i = container.begin(); i != container.end(); ++i)
@@ -148,7 +152,7 @@ double	PmergeMe::_mergeInsertSort(T& container)
 				--j;
 			}
 		}
-		return (_deltaTime(tBegin));
+		return ;
 	}
 	typename T::iterator middle = container.begin() + size / 2;
 	T left(container.begin(), middle);
@@ -184,7 +188,6 @@ double	PmergeMe::_mergeInsertSort(T& container)
 		++j;
 		++k;
 	}
-	return (_deltaTime(tBegin));
 }
 
 /*

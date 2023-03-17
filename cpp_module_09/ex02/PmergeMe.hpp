@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:05:00 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/16 13:23:30 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:30:28 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class PmergeMe
 		void				_printTime(std::string vectorDeque) const;
 
 		template <typename T>
-		double				_mergeInsertSort(T& container);
+		void				_mergeInsertSort(T& container);
 	
 		double				_getTime(void);
 		double				_deltaTime(long long time);
