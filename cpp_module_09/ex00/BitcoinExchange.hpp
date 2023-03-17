@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:49:18 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/16 23:47:33 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/16 23:54:32 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class BitcoinExchange
 		float getExchangeRate(const std::string& date, float value) const;
 
 	private:
+		bool	_isValidDate(const std::string& dateStr) const;
+
 		std::map<std::string, float> _exchangeRates;
 
 	protected:

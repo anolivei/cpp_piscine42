@@ -6,7 +6,7 @@
 /*   By: anolivei <anolivei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:49:14 by anolivei          #+#    #+#             */
-/*   Updated: 2023/03/16 22:05:35 by anolivei         ###   ########.fr       */
+/*   Updated: 2023/03/16 23:54:37 by anolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& obj)
 	return (*this);
 }
 
-bool isValidDate(const std::string& dateStr)
+bool	BitcoinExchange::_isValidDate(const std::string& dateStr) const
 {
 	int year, month, day;
 	char separator;
@@ -86,7 +86,7 @@ float BitcoinExchange::getExchangeRate(const std::string& date, float value) con
 		throw negativeValue();
 	if (value > 1000)
 		throw tooLargeNumber();
-	if (isValidDate(date) == false)
+	if (_isValidDate(date) == false)
 		throw inexistentDate();
 	std::map<std::string, float>::const_iterator it = _exchangeRates.find(date);
 	if (it == _exchangeRates.end())
