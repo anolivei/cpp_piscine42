@@ -17,8 +17,6 @@
 
 </p>
 
-<hr>
-
 <p align="center">
   <a href="about">About</a> &#xa0; | &#xa0; 
   <a href="features">Links</a> &#xa0; | &#xa0;
