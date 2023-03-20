@@ -17,12 +17,6 @@
 
 </p>
 
-
-
-<h4 align="center"> 
-CPP Piscine Under construction...
-</h4> 
-
 <hr>
 
 <p align="center">
